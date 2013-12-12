@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>图标sprite的位置计算</title>
+<style>
+*{margin: 0; padding: 0;}
+.container h3{margin: 10px 0 30px;}
+.container{width: 800px; margin: 0 auto;}
+.container h3, .container .btn{text-align: center;}
+.container .btn{float: left; margin-top: 60px;}
+.container .btn button{width: 80px;}
+.container .pos-data p{width: 300px; float: left; font-size: 12px;}
+.container .pos-data p label{display: block; margin-bottom: 10px;}
+.container .pos-data p label em{font-style: normal; display: inline-block; width: 80px;}
+.container .result{float: right;}
+.container .result textarea{width: 350px; height: 150px;}
+</style>
+</head>
+<body>
+<div class="container">
+  <h3>计算icon-sprite的位置数据</h3>
+  <div class="pos-data">
+    <p>
+      <label><em>宽度：</em><input type="text" id="J_itemW" /></label>
+      <label><em>高度：</em><input type="text" id="J_itemH" /></label>
+      <label><em>序号：</em><input type="text" id="J_iconN" /></label>
+      <label><em>icon宽度：</em><input type="text" id="J_iconW" /></label>
+      <label><em>icon高度：</em><input type="text" id="J_iconH" /></label>
+    </p>
+  </div>
+  <p class="btn"><button id="J_conver">转化</button></p>
+  <div class="result"><textarea id="J_result" cols="30" rows="10"></textarea></div>
+</div>
+
+
+
+<script src="../lib/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+var convert = {
+  init: function(){
+    var me = this;
+    me.bindHandler();
+  },
+  bindHandler: function(){
+    var me = this;
+    $('#J_conver').click(function(e){
+      me.converPos();
+    });
+  },
+  converPos: function(data){
+    var me = this;
+    //data
+    var itemW = Number($('#J_itemW').val()),
+        itemH = Number($('#J_itemH').val());
+    var iconN = Number($('#J_iconN').val()),
+        iconW = Number($('#J_iconW').val()),
+        iconH = Number($('#J_iconH').val());
+    var sx, sy;
+    sx = Math.round((itemW-iconW)/2);
+    sy = (iconN-1)*itemH+Math.round((itemH-iconH)/2);
+    //
+    var str = sx + '<br/>' + sy;
+    if(isNaN(sx) || isNaN(sy)){
+      str = '数据有问题';
+    }
+    $('#J_result').val(str);
+  }
+};
+
+//init
+convert.init();
+
+});
+</script>
+</body>
+</html>
