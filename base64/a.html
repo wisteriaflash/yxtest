@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css3 test</title>
+  <link rel="stylesheet" href="style.css">
+<style type="text/css">
+.imgbox{background: url(a.png) no-repeat; width: 100px; height: 100px;
+  -webkit-background-size: 60px 60px;
+  background-size: 60px 60px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.img2{
+  width: 100px;
+  height: 100px; 
+  text-align: center;
+  background-color: black;
+  border-radius: 12px 10px 5px 5px;
+  margin-top: 30px;
+}
+div:nth-child(1){background-color: red;}
+
+.counter1{counter-reset: countera;}
+.counter1 li:before{content: counter(countera) '---'; counter-increment: countera;}
+
+</style>
+</head>
+<body>
+
+<div class="imgbox"></div>
+<div class="img2"><img src="a.png" alt=""></div>
+<ul class="counter1">
+  <li>a</li>
+  <li>bb</li>
+  <li>ccc</li>
+  <li>dddd</li>
+  <li>eeeee</li>
+</ul>
+
+
+</body>
+</html>

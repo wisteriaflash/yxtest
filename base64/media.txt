@@ -1,0 +1,117 @@
+方向（Orientation ）
+——我们可以使用orientation media query 根据当前屏幕和设备方向来指定特定的样式。
+——两个属性：横向（landscape）和 竖向（portrait）
+    浏览器或设备的方向是通过监测窗口的宽度和高度来判断的。如果窗口的高度比宽度大，那么就是竖向。反之就是横向。
+
+    
+
+
+/*
+    说明：CSS3 为不同媒介设置样式的方式（CSS3 Media Queries）
+    来源：http://www.stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/
+    整理：CodeBit.cn [ http://www.codebit.cn ]
+*/
+ 
+/* 智能手机 (纵向 和 横向) ----------- */
+@media only screen
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+ 
+/* 智能手机 (横向) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+ 
+/* 智能手机 (纵向) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+ 
+/* iPad 系列 (纵向 和 横向) ----------- */
+@media only screen
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+ 
+/* iPad 系列 (横向) ----------- */
+@media only screen
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+ 
+/* iPad 系列 (纵向) ----------- */
+@media only screen
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+ 
+/* 台式机 和 笔记本 ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+ 
+/* 大屏幕 ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+ 
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+
+
+
+========================按需加载=========================
+
+<head>
+ 
+<link rel="stylesheet" href="smartphone.css"
+media="only screen and (min-device-width : 320px) 
+and (max-device-width : 480px)">
+ 
+<link rel="stylesheet" href="smartphone-landscape.css"
+media="only screen and (min-width : 321px)">
+ 
+<link rel="stylesheet" href="smartphone-portrait.css"
+media="only screen and (max-width : 320px)">
+ 
+<link rel="stylesheet" href="ipad.css"
+media="only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)">
+ 
+<link rel="stylesheet" href="ipad-landscape.css"
+media="only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape)">
+ 
+<link rel="stylesheet" href="ipad-portrait.css"
+media="only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)">
+ 
+<link rel="stylesheet" href="widescreen.css"
+media="only screen and (min-width : 1824px)">
+ 
+<link rel="stylesheet" href="iphone4.css"
+media="only screen 
+and (-webkit-min-device-pixel-ratio : 1.5), 
+only screen and (min-device-pixel-ratio : 1.5)">
+ 
+</head>

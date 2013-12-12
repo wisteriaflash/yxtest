@@ -1,0 +1,14 @@
+1.border-radius方法：
+
+border-radius:apx，比较常见，其中a表示数值，下同；
+-webkit-border-top-left-radius:apx，类似这种的写法还是很实用的
+//**
+但一定要记住顺序 ====> 一句话：先写Y轴，再写X轴。
+
+注意：
+  上述的-webkit-是兼容webkit内核的写法。
+  -moz-内核的写法有所不同，如：-moz-border-radius-topleft:apx; 
+
+即两种写法：
+-webkit-border-top-left-radius:apx; 
+-moz-border-radius-topleft:apx;
