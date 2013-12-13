@@ -168,9 +168,11 @@ var svgObj = {
     d3Start2: function(){
         var me = this;
         var data = me.data;
-        
+        var a = 1;
     }
 }
+
+
 //test
 var test = {
     init: function(){
