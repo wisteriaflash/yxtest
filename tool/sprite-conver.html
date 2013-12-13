@@ -14,7 +14,7 @@
 .container .pos-data p label{display: block; margin-bottom: 10px;}
 .container .pos-data p label em{font-style: normal; display: inline-block; width: 80px;}
 .container .result{float: right;}
-.container .result textarea{width: 350px; height: 150px;}
+.container .result textarea{width: 350px; height: 150px; line-height: 20px;}
 </style>
 </head>
 <body>
@@ -61,7 +61,7 @@ var convert = {
     sx = Math.round((itemW-iconW)/2);
     sy = (iconN-1)*itemH+Math.round((itemH-iconH)/2);
     //
-    var str = sx + '<br/>' + sy;
+    var str = sx + '\n' + sy;
     if(isNaN(sx) || isNaN(sy)){
       str = '数据有问题';
     }
