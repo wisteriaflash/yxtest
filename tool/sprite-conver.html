@@ -5,6 +5,7 @@
 <title>图标sprite的位置计算</title>
 <style>
 *{margin: 0; padding: 0;}
+em{font-style: normal;;}
 .container h3{margin: 10px 0 30px;}
 .container{width: 800px; margin: 0 auto;}
 .container h3, .container .btn{text-align: center;}
@@ -12,8 +13,11 @@
 .container .btn button{width: 80px;}
 .container .pos-data p{width: 300px; float: left; font-size: 12px;}
 .container .pos-data p label{display: block; margin-bottom: 10px;}
-.container .pos-data p label em{font-style: normal; display: inline-block; width: 80px;}
+.container .pos-data p label em{font-style: normal; display: inline-block; width: 80px; text-align: right;}
+.container .pos-data p label input{margin-right: 3px;}
 .container .result{float: right;}
+.container .result p{margin-bottom: 10px;}
+.container .result p span{margin-right: 5px; display: block;}
 .container .result textarea{width: 350px; height: 150px; line-height: 20px;}
 </style>
 </head>
@@ -22,15 +26,18 @@
   <h3>计算icon-sprite的位置数据</h3>
   <div class="pos-data">
     <p>
-      <label><em>宽度：</em><input type="text" id="J_itemW" /></label>
-      <label><em>高度：</em><input type="text" id="J_itemH" /></label>
-      <label><em>序号：</em><input type="text" id="J_iconN" /></label>
-      <label><em>icon宽度：</em><input type="text" id="J_iconW" /></label>
-      <label><em>icon高度：</em><input type="text" id="J_iconH" /></label>
+      <label><em>宽度：</em><input type="text" id="J_itemW" value="100" />px</label>
+      <label><em>高度：</em><input type="text" id="J_itemH" value="100" />px</label>
+      <label><em>序号：</em><input type="text" id="J_iconN" value="1" /></label>
+      <label><em>icon宽度：</em><input type="text" id="J_iconW" value="50" />px</label>
+      <label><em>icon高度：</em><input type="text" id="J_iconH" value="50" />px</label>
     </p>
   </div>
   <p class="btn"><button id="J_conver">转化</button></p>
-  <div class="result"><textarea id="J_result" cols="30" rows="10"></textarea></div>
+  <div class="result">
+    <textarea id="J_result" cols="30" rows="10"></textarea>
+    <p id="J_resultPer"><em>perH：</em><em></em></p>
+  </div>
 </div>
 
 
@@ -47,9 +54,10 @@ var convert = {
     var me = this;
     $('#J_conver').click(function(e){
       me.converPos();
+      me.itemPer();
     });
   },
-  converPos: function(data){
+  converPos: function(){
     var me = this;
     //data
     var itemW = Number($('#J_itemW').val()),
@@ -61,11 +69,23 @@ var convert = {
     sx = Math.round((itemW-iconW)/2);
     sy = (iconN-1)*itemH+Math.round((itemH-iconH)/2);
     //
-    var str = sx + '\n' + sy;
+    var str = ''+sx + '\n' + sy;
     if(isNaN(sx) || isNaN(sy)){
       str = '数据有问题';
     }
     $('#J_result').val(str);
+  },
+  itemPer: function(){
+    var me = this;
+    var itemW = Number($('#J_itemW').val()),
+        itemH = Number($('#J_itemH').val());
+    var limit = 10;
+    var str = '', num;
+    for(var i=0; i<limit; i++){
+      num = i*itemH;
+      str += '<span>'+num+'</span>';
+    }
+    $('#J_resultPer em').eq(1).html(str);
   }
 };
 
