@@ -51,7 +51,7 @@ var svgObj = {
         // me.testPathText();
         // me.testBaseD3();
         me.d3Start();
-        // me.d3Start2();
+        me.d3Start2();
     },
     testText: function(){
         var me = this;
@@ -169,6 +169,8 @@ var svgObj = {
         var me = this;
         var data = me.data;
         var a = 1;
+        
+        
     }
 }
 
