@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>晋江文字过滤</title>
+  <style>
+  *{margin: 0; padding: 0;}
+  .wrapper{width: 950px; margin: 0 auto; padding: 10px 0;}
+  .wrapper h2{margin-bottom: 20px; text-align: center;}
+  .wrapper .item{float: left; margin: 0 35px 20px;}
+  .wrapper .item textarea{width: 400px; height: 400px;}  
+  .wrapper .btn{clear: both; display: block; width: 100px; height: 20px; margin: 0 auto;}
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <h2>晋江小说--文字过滤</h2>
+  <div class="item txt">
+    <textarea id="J_txt" cols="30" rows="10" autofocus="autofocus"></textarea>
+  </div>
+  <div class="item result">
+    <textarea id="J_result" cols="30" rows="10"></textarea>
+  </div>
+  <button id="J_flterBtn" class="btn">过滤</button>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+  var filter= {
+    init: function(){
+      var me = this;
+      me.bindHander();
+    },
+    bindHander: function(){
+      var me = this;
+      //
+      $('#J_flterBtn').click(function(){
+        me.filterTxt();
+      });
+      $('#J_txt').keypress(function(evt){
+        if(evt.which == 13){//enter
+          me.filterTxt();
+        }
+      });
+    },
+    filterTxt: function(str){
+      var me = this;
+      var str = $('#J_txt').val();
+      var newStr = '';
+      //
+      if(str.length>0 ){
+        newStr = str.replace(/。[a-z0-9].*/g,'');
+        newStr = newStr.replace(/\n/g,'\n\n');
+      }
+      //
+      $('#J_result').val(newStr);
+      setTimeout(function(){
+        $("#J_result").focus();
+        $("#J_result").select();
+      },50);
+      
+    }
+  }
+  //
+  filter.init();
+});
+</script>
+</body>
+</html>
