@@ -16,9 +16,9 @@ em{font-style: normal;;}
 .container .pos-data p label em{font-style: normal; display: inline-block; width: 80px; text-align: right;}
 .container .pos-data p label input{margin-right: 3px;}
 .container .result{float: right;}
-.container .result p{margin-bottom: 10px;}
+.container .result p{margin-bottom: 10px; width: 100px; float: left;}
 .container .result p span{margin-right: 5px; display: block;}
-.container .result textarea{width: 350px; height: 150px; line-height: 20px;}
+.container .result textarea{width: 350px; height: 150px; line-height: 20px; clear: both; display: block;}
 </style>
 </head>
 <body>
@@ -37,6 +37,7 @@ em{font-style: normal;;}
   <div class="result">
     <textarea id="J_result" cols="30" rows="10"></textarea>
     <p id="J_resultPer"><em>perH：</em><em></em></p>
+    <p id="J_resultPerHalf"><em>perH/2：</em><em></em></p>
   </div>
 </div>
 
@@ -81,11 +82,14 @@ var convert = {
         itemH = Number($('#J_itemH').val());
     var limit = 10;
     var str = '', num;
+    var str2 = '';
     for(var i=0; i<limit; i++){
       num = i*itemH;
       str += '<span>'+num+'</span>';
+      str2 += '<span>'+i*(itemH/2)+'</span>';
     }
     $('#J_resultPer em').eq(1).html(str);
+    $('#J_resultPerHalf em').eq(1).html(str2);
   }
 };
 
