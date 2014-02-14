@@ -1,0 +1,16 @@
+body {
+  color: #444444;
+  background-color: #000000;
+}
+body .header {
+  color: #000;
+  border: 1px solid red;
+  border-radius: 2px;
+  font-size: 12px;
+}
+body .header em {
+  color: yellow;
+}
+body span {
+  color: red;
+}
