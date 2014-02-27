@@ -1,0 +1,21 @@
+body {
+  color: #333333;
+  background-color: #cccccc;
+}
+body .header {
+  color: #000;
+  border: 1px solid red;
+  border-radius: 2px;
+  font-size: 12px;
+}
+body .header em {
+  color: yellow;
+}
+body span {
+  color: red;
+}
+.less {
+  color: #fff;
+  font-size: 14px;
+}
+/*# sourceMappingURL=main.css.map */
