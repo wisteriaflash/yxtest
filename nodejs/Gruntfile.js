@@ -9,21 +9,37 @@ module.exports = function(grunt){
             development: {
                 options: {
                     paths: ['css'],
+                    compress: true,
+                    yuicompress: true,
                     sourceMap: true,
-                    sourceMapBasepath: 'css/',
-                    sourceMapFilename: 'css/main.css.map'
+                    sourceMapBasepath: 'css/'
+                    // sourceMapFilename: 'css/main.css.map'
                 },
-                files: {
-                    'css/main.css': 'css/less/main.less'
-                }
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'css/less',
+                        src: ['*.less', '!_*.less'],
+                        dest: 'css/',
+                        ext: '.css'
+                    }
+                ]
             },
             production: {
                 options: {
                     paths: ['css'],
                     cleancss: true,
+                    sourceMap: false
                 },
-                files: {
-                }
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'css/less',
+                        src: ['*.less', '!_*.less'],
+                        dest: 'css/',
+                        ext: '.css'
+                    }
+                ]
             }
 
 
