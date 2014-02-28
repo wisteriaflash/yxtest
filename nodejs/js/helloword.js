@@ -2,12 +2,12 @@ console.log('hello world');
 
 var test = {
     a1: function(){
-        console.log('a');
+        console.log('bc');
     },
     bindHandler: function(){
 
     }
-}
+};
 //init
 test.a1();
 
