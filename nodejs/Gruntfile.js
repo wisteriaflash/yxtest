@@ -11,9 +11,10 @@ module.exports = function(grunt){
                     paths: ['css'],
                     compress: true,
                     yuicompress: true,
-                    sourceMap: true,
-                    sourceMapBasepath: 'css/'
-                    // sourceMapFilename: 'css/main.css.map'
+                    sourceMap: true
+                    // sourceMapBasepath: 'css/less',
+                    // outputSourceFiles: true
+                    // sourceMapFilename: '*.css.map'
                 },
                 files: [
                     {
@@ -73,5 +74,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4.默认任务
-    grunt.registerTask('default', ['less','watch']);
+    grunt.registerTask('default', ['less:development','watch']);
 }
