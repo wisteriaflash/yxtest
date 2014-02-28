@@ -18,8 +18,8 @@
       margin-bottom: 15px;
     }
     .show-grid [class^="col-"] {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 0px;
+      padding-bottom: 0px;
       background-color: #eee;
       border: 1px solid #ddd;
       background-color: rgba(86,61,124,.15);
@@ -50,6 +50,43 @@
   </head>
   <body>
     <h1>Hello, world!  Grid  </h1>
+    <header class="container" style="width:auto;">
+      <div class="row show-grid">
+        <div class="col-xs-3 col-sm-3 col-md-3 dropdown dropdown-custom">
+          <div class="dropdown dropdown-custom" style="float:left;">
+            <a id="drop4" class="dropdown-custom-btn" role="button" data-toggle="dropdown" href="#">Dro1<b class="caret"></b></a>
+            <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="dropdown" style="margin: 0 auto; width:120px;">
+            <a id="drop5" role="button" data-toggle="dropdown" href="#">Dropdown 2 <b class="caret"></b></a>
+            <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="dropdown dropdown-custom" style="float:right;">
+            <a id="drop6" class="dropdown-custom-btn" role="button" data-toggle="dropdown" href="#">Dro3<b class="caret"></b></a>
+            <ul id="menu3" class="dropdown-menu pull-right" role="menu" aria-labelledby="drop6">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Another action</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
     <div class="bs-example" style="margin-bottom:50px;">
       <ul class="nav nav-pills" style="position:relative;">
         <!-- <li class="active"><a href="#">Regular link</a></li> -->

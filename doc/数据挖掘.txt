@@ -1,0 +1,115 @@
+参考链接：http://www.leiphone.com/warlial-visualization.html
+
+title:数据挖掘：用可视化效果展现你的数据
+
+数据展现--推荐网站：
+1.many-eyes
+2.visualizing **
+
+PS：以上都是社区形式的网站，用户可以自行上传，并且网站还有积累下来的数据供用户使用。
+
+
+数据表现形式--分类
+1.Chart
+2.Time series
+3.Map
+4.Flow
+5.Matirx
+6.Network
+7.Hierarchy
+8.Info-graphic
+
+
+一、有一系列对象，他们之间相互关联
+1.线形network图 -> flow图：(people moving的flow)->http://www.visualizing.org/visualizations/peoplemovin
+2.圈形的network图：圈形可以使得连线集中在圈内部，而且可以减少数据交叉。
+  ex: Migrants moving money -> http://www.visualizing.org/full-screen/27446
+3.network图：通过点和连线来关联。
+  ex: Attractions of Councils: WEF GAC interlink survey -> http://www.visualizing.org/full-screen/6252
+4.table图：为了直观，使用面积等方式来代表数据大小。
+  ex: council 之间的例子 -> http://www.visualizing.org/full-screen/6407
+
+二、层级数据，数据之间可以分成几个层级关系
+ex: hierarchy 图 -> http://www.visualizing.org/full-screen/1047
+
+三、简单的两维数据(ex:某种现象出现的频数)。
+1.histogram(直方图)：ex：visualization -> http://www.visualizing.org/full-screen/37008
+2.tree map(树状图): 使用面积表示数据大小。
+ex:  UN 的 Global Pulse Visualization -> http://www.visualizing.org/full-screen/29356
+3.散点：使用散点的大小或者颜色等属性来表示数据的大小。
+ex: 学生坐座位习惯的例子 -> http://www.visualizing.org/full-screen/31071
+ex2: tag page也属于此类型。
+
+四、坐标数据：
+
+
+
+
+======================D3.BEGIN==============================
+1.D3主要用于生成那些解释型的，而非探索型的可视化工具。
+PS：探索型工具：能帮你根据相同的数据生成多个识图-> ①Tableau(www.tableausoftware.com) ②ggplot2(ggplot2.org)。
+2.比例尺是一组把输入域映射为输出范围的函数。
+  · 比例尺的输入值域(input domain--指可能的输入值的范围。
+  · 比例尺的输出范围(output range)--指输出值可能的范围，一般以用于显示的像素为单位。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================数据可视化之美==============================
+1.何为美：“美”包含4个关键因素。
+  ①新颖   ②充实   ③高效   ④美感
+2.学习经典：条形图、折线图、散点图、饼图、组织流程图等。
+3.两个闻名于世的美丽的可视化：
+  ①元素周期表--门捷列夫(Mendeleev)
+  ②伦敦地铁图--Harry Beck：背景是画电路的草图。
+4.减少可视化混乱：
+  ①.使用轴线：在减少可视化噪音数和文本数量的同时，仍能保留足够的信息。
+  ②.把大数据集划分成多个相似或者相关的子集并分别可视化。
+5.信息可视化这门艺术在某种程度上似一头“怪兽”。
+  创建信息可视化包括7个阶段：获取、解析、过滤、挖掘、展现、提炼和交互。
+6.问题 + 可视化数据 + 场景 = 故事
+
+
+
+
+
+
+
+
+
+
+
+PS：可视化(亦即可是效果)，表示所有结构化的信息表现方式，包括图形、图表、示意图、地图、故事情节以及不是很正式的结构化插图。
+==================================================================
+jquery记录：
+1.jquery无法选择:hover,:before等伪类元素，此时的解决方法如下：
+  ① 使用js模拟，通过更换class，来达到效果。
+  ② 直接使用jquery在head上添加style，即: $('head').append('<style></style');
+  ③ :before等可通过更改html结构，换成dom元素，来达到效果。
+2.名词解释：
+  URL(Uniform Resource Locator)：统一资源定位符
+  URI(Uniform Resource Identifier)：统一资源标识符
+
+*完整的URL由以下4部分构成：
+  · 通信协议，如HTTP或HTTPS
+  · 资源所在的域名，如aa.com
+  · 端口号，表示要链接到服务器的哪个端口上
+  · 其他定位信息，如请求文件的路径或查询参数
+
