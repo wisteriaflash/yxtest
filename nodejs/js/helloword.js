@@ -1,4 +1,17 @@
+/**
+ * @author 
+ */
+
 console.log('hello world');
+
+
+
+
+
+(function(){
+
+});
+
 
 var test = {
     a1: function(){
