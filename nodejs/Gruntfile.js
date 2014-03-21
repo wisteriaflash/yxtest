@@ -7,7 +7,7 @@ module.exports = function(grunt){
                 '* node.js test proj'+
                 '*/\n',
         // 2. 插件的配置项
-        less: {
+        less: {//less to css
             dev: {
                 options: {
                     paths: ['css'],
@@ -41,7 +41,15 @@ module.exports = function(grunt){
                 ]
             }
         },
-        jshint: {
+        sprite:{//icon-sprite
+            all: {
+                src: 'img/icon/*.png',
+                destImg: 'img/icon-spritesheet.png',
+                destCSS: 'css/icon-sprites.css',
+                algorithm: 'binary-tree'
+            }
+        },
+        jshint: {//js语法检查
             files: ['js/**/*.js', 'test/**/*.js'],
             options: {
                 globals: {
@@ -51,10 +59,10 @@ module.exports = function(grunt){
                 }
             }
         },
-        concat: {
+        concat: {//文件合并
 
         },
-        // uglify: {
+        // uglify: {//js文件压缩
         //     options: {
         //         banner: '<%= banner %>'
         //     },
@@ -74,6 +82,7 @@ module.exports = function(grunt){
 
     // 3.加载使用的插件
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
