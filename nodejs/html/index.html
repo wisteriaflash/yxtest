@@ -3,13 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="../css/main.css"> -->
+  <style>
+  body{background-color: #ccc;}
+  body * {
+    box-sizing: border-box;
+  }
+  .container{position: relative; min-height: 100%;}
+  .container .bg{background-color: red; width: 400px; position: absolute; top: 0; bottom: 0;}
+  .container {
+    position: relative;
+  }
+/*  .container .bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    border-right: 1px solid #E5E5EE;
+    z-index: -1;
+    width: 350px;
+  }*/
+  .sections .docs {
+/*    max-width: 350px;
+    min-width: 350px;
+    padding: 13px;
+    min-height: 5px;
+    overflow-x: hidden;
+    vertical-align: top;
+    text-align: left;
+    white-space: normal;
+    display: inline-block;*/
+  }
+  </style>
 </head>
 <body>
   <div class="header">
     aaaa
   </div>
   <div class="less">cccc</div>
+  <div class="container">
+    <div class="bg"></div>
+    <ul class="sections">
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </div>
 </body>
 
 </html>

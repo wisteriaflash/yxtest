@@ -1,3 +1,7 @@
+/* nodejs test -v0.1.0 -2014-03-25 */
+//'Node.js ———— Evented I/O for V8 JavaScript'
+
+
 /**
  * @author wisteria
  * description doxco：markdown方式写js文档注释
@@ -87,3 +91,5 @@ Node.js性能不错。它以单进程、单线程模式运行，和Javascript的
         //your code
     });
 });*/
+/* nodejs test -v0.1.0 -2014-03-25 */
+function test(){}function test(){}function test(){}function test(){}function test22(){console.log("222")}function test22(){console.log("222")}function test22(){console.log("222")}function test22(){console.log("222")}console.log("hello world");var test={a1:function(){console.log("bc")},bindHandler:function(){}};test.a1(),console.log("hello world");var test={a1:function(){console.log("bc")},bindHandler:function(){}};test.a1(),console.log("hello world");var test={a1:function(){console.log("bc")},bindHandler:function(){}};test.a1(),console.log("hello world");var test={a1:function(){console.log("bc")},bindHandler:function(){}};test.a1();
