@@ -3,9 +3,8 @@ module.exports = function(grunt){
     // 1.所有配置文件
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        banner: '/*!\n'+
-                '* node.js test proj'+
-                '*/\n',
+        banner: '/* <%= pkg.name %> -v<%= pkg.version %> -'+
+                '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
         // 2. 插件的配置项
         less: {//less to css
             dev: {
@@ -13,15 +12,13 @@ module.exports = function(grunt){
                     paths: ['css'],
                     sourceMap: true
                 },
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'css/less',
-                        src: ['*.less', '!_*.less'],
-                        dest: 'css/',
-                        ext: '.css'
-                    }
-                ]
+                files: [{
+                    expand: true,
+                    cwd: 'css/less',
+                    src: ['*.less', '!_*.less'],
+                    dest: 'css/',
+                    ext: '.css'
+                }]
             },
             production: {
                 options: {
@@ -61,18 +58,28 @@ module.exports = function(grunt){
             }
         },
         concat: {//文件合并
-
+            options: {
+                banner: '<%= banner %>'
+            },
+            dist: {
+                src: ['js/*.js'],
+                dest: 'js/production.js'
+            }
         },
-        // uglify: {//js文件压缩
-        //     options: {
-        //         banner: '<%= banner %>'
-        //     },
-        //     dist: {
-        //         files: {
-
-        //         }
-        //     }
-        // },
+        uglify: {//js文件压缩
+            options: {
+                banner: '<%= banner %>'
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'js',
+                    src: '*.js',
+                    dest: 'js/min',
+                    ext: '.min.js'
+                }]
+            }
+        },
         watch: {
             script: {
                 files: ['css/less/*.less','<%= jshint.files %>'],
@@ -91,5 +98,5 @@ module.exports = function(grunt){
 
     // 4.任务
     grunt.registerTask('default', ['less:dev','watch','jshint']);
-    grunt.registerTask('product', ['less:production']);
+    grunt.registerTask('product', ['less:production','uglify']);
 }
