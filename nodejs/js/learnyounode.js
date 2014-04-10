@@ -149,3 +149,51 @@ function nowTime(){
 server.listen(process.argv[2]);*/
 
 /* lesson11 */
+/*var fs = require('fs');
+var http = require('http');
+var server = http.createServer(function(req,res){
+    res.writeHead(200, {'content-type': 'text/plain'});
+    fs.createReadStream(process.argv[3]).pipe(res);
+})
+server.listen(process.argv[2]);*/
+
+/* lesson12 */
+/*var map = require('through2-map');
+var http = require('http');
+var server = http.createServer(function(req,res){
+    if(req.method != 'POST'){
+        return res.end('send me a POST\n');
+    }
+    req.pipe(map(function(chunk){
+        return chunk.toString().toUpperCase();
+    })).pipe(res);
+})
+server.listen(process.argv[2]);*/
+
+/* lesson12 */
+var url = require('url');
+var http = require('http');
+var server = http.createServer(function(req,res){
+    var paramObj = url.parse(req.url, true);
+    var date = new Date(paramObj.query.iso);
+    var result;
+    if(paramObj.pathname == '/api/unixtime'){
+        result = {
+            'unixtime' : date.getTime()
+        }
+    }else if(paramObj.pathname == '/api/parsetime'){
+        result = {
+            'hour': date.getHours(),
+            'minute': date.getMinutes(),
+            'second': date.getSeconds()
+        }
+    }
+    if(result){
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        var jsonStr = JSON.stringify(result);
+        return res.end(jsonStr);
+    }
+    res.writeHead(404);
+    res.end();
+})
+server.listen(process.argv[2]);
