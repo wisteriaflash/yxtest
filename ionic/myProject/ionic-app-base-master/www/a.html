@@ -1,0 +1,50 @@
+<html ng-app="ionicApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Ionic List Directive with infinite scrolling</title>
+
+  <link href="http://code.ionicframework.com/nightly/css/ionic.min.css" rel="stylesheet">
+  <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>
+</head>
+
+<body ng-controller="MyCtrl">
+
+  <header class="bar bar-header bar-positive">
+    <h1 class="title">Ionic Infinite Scroll with {{items.length}} items</h1>
+  </header>
+
+  <ion-content class="has-header">
+
+    <ion-list>
+
+      <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/item/{{item.id}}">Item {{ item.id }}</ion-item>
+
+    </ion-list>
+
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+
+  </ion-content>
+  <script>
+    angular.module('ionicApp', ['ionic'])
+
+.controller('MyCtrl', function($scope) {
+  $scope.noMoreItemsAvailable = false;
+  
+  $scope.loadMore = function() {
+    $scope.items.push({ id: $scope.items.length});
+   
+    if ( $scope.items.length == 99 ) {
+      $scope.noMoreItemsAvailable = true;
+    }
+    $scope.$broadcast('scroll.infiniteScrollComplete');
+  };
+  
+  $scope.items = [];
+  
+});
+  </script>
+</body>
+</html>
