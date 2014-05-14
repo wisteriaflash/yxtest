@@ -1,16 +1,41 @@
+ 
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <ul>
-    <li>sdfdfaa</li>
-    <li>sdfdf</li>
-    <li>sdfdf</li>
-    <li>sdfdf</li>
-  </ul>
-
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible"/>
+    <title>司徒正美 CSS垂直居中</title>
+    <style type="text/css">
+      div {
+       /*IE8与标准游览器垂直对齐*/
+        display:table-cell;
+        vertical-align:middle;
+        overflow:hidden;
+        position:relative;
+        text-align:center;
+        width:500px;/*装饰*/
+        height:500px;
+        border:1px solid #ccc;
+        background:#B9D6FF;
+      }
+      div p {
+        +position:absolute;
+        top:50%
+      }
+      img {
+        +position:relative;
+        top:-50%;
+        left:-50%;
+      }
+ 
+    </style>
+  </head>
+  <body>
+    <h1>垂直居中(绝对定位)</h1>
+    <div class="container">
+      <p>
+        <img src="http://images.cnblogs.com/cnblogs_com/rubylouvre/205314/r_iebug.jpg" />
+      </p>
+    </div>
+  </body>
 </html>

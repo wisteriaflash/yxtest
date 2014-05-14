@@ -77,7 +77,7 @@ var stream = ws('ws://localhost:8000');
 stream.end('hello\n');*/
 
 /* lesson10 */
-var through = require('through');
+/*var through = require('through');
 var trumpet = require('trumpet');
 var tr = trumpet();
 
@@ -93,4 +93,32 @@ load.pipe(through(function(buf){
     this.queue(buf.toString().toUpperCase());
 }));
 
-process.stdin.pipe(tr).pipe(process.stdout);
+process.stdin.pipe(tr).pipe(process.stdout);*/
+
+/* lesson11 */
+/*var spawn = require('child_process').spawn;
+var duplex = require('duplexer');
+
+module.exports = function(cmd, args){
+    var child = spawn(cmd, args);
+    return duplex(child.stdin,child.stdout);
+}*/
+
+/* lesson12 */
+var duplex = require('duplexer');
+var through = require('through');
+module.exports = function(counter){
+    var counts = {};
+    return duplex(through(record_count, set_count),counter);
+
+    function record_count(obj){
+        var country = obj.country;
+        var count = counts[country] || 0;
+        counts[country] = count + 1;
+    }
+
+    function set_count(){
+        counter.setCounts(counts);
+        counts = {};
+    }
+};

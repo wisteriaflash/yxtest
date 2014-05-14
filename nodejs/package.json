@@ -27,6 +27,7 @@
     "split": "~0.3.0",
     "concat-stream": "~1.4.4",
     "websocket-stream": "~0.5.1",
-    "trumpet": "~1.6.3"
+    "trumpet": "~1.6.3",
+    "duplexer": "^0.1.1"
   }
 }
