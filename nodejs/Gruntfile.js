@@ -45,7 +45,7 @@ module.exports = function(grunt){
         //         destCSS: 'css/icon-sprites.css',
         //         algorithm: 'binary-tree'
         //     }
-        //     //依赖支持：Graphics Magick，PhantomJS，并配置在path环境变量中
+        //     //依赖支持：Graphics Magick，PhantomJS，并配置在path环境变量中 
         // },
         // imagemin: {//图片优化
         //     dynamic: {
