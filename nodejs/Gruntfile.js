@@ -38,25 +38,25 @@ module.exports = function(grunt){
                 ]
             }
         },
-        sprite:{//icon-sprite
-            all: {
-                src: 'img/icon/*.png',
-                destImg: 'img/icon-spritesheet.png',
-                destCSS: 'css/icon-sprites.css',
-                algorithm: 'binary-tree'
-            }
-            //依赖支持：Graphics Magick，PhantomJS，并配置在path环境变量中
-        },
-        imagemin: {//图片优化
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'img/',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'img/build/'
-                }]
-            }
-        },
+        // sprite:{//icon-sprite
+        //     all: {
+        //         src: 'img/icon/*.png',
+        //         destImg: 'img/icon-spritesheet.png',
+        //         destCSS: 'css/icon-sprites.css',
+        //         algorithm: 'binary-tree'
+        //     }
+        //     //依赖支持：Graphics Magick，PhantomJS，并配置在path环境变量中
+        // },
+        // imagemin: {//图片优化
+        //     dynamic: {
+        //         files: [{
+        //             expand: true,
+        //             cwd: 'img/',
+        //             src: ['**/*.{png,jpg,gif}'],
+        //             dest: 'img/build/'
+        //         }]
+        //     }
+        // },
         jshint: {//js语法检查
             files: ['js/**/*.js', 'test/**/*.js'],
             options: {
@@ -101,8 +101,8 @@ module.exports = function(grunt){
 
     // 3.加载使用的插件
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-spritesmith');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    //grunt.loadNpmTasks('grunt-spritesmith');
+    // grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
