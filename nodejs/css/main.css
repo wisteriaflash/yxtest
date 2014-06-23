@@ -9,5 +9,10 @@
   font-size: 14px;
   color: #ff0000;
   background-color: #000000;
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
+  transform: rotate(20deg);
 }
-/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22css%2Fless%2F_bb.less%22%2C%22css%2Fless%2Fmain.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAGA%3BEACE%2CgBAAA%3BEACA%2CqBAAA%3BEACA%2CeAAA%3BEACA%2CcAAA%3B%3BACNF%3BEACE%2CWAAA%3BEACA%2CeAAA%3BEACA%2CcAAA%3BEACA%2CyBAAA%22%7D */
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22css%2Fless%2F_bb.less%22%2C%22css%2Fless%2Fmain.less%22%2C%22css%2Fless%2F_prefixer.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAGA%3BEACE%2CgBAAA%3BEACA%2CqBAAA%3BEACA%2CeAAA%3BEACA%2CcAAA%3B%3BACJF%3BEACE%2CWAAA%3BEACA%2CeAAA%3BEACA%2CcAAA%3BEACA%2CyBAAA%3BEC2RE%2CmBAqBW%2CaArBX%3BEACA%2CgBAoBW%2CaApBX%3BEACA%2CeAmBW%2CaAnBX%3BEACA%2CcAkBW%2CaAlBX%3BEACA%2CWAiBW%2CaAjBX%22%7D */
