@@ -59,7 +59,7 @@ module.exports = function(grunt){
         // },
         tinypng: {
             options: {
-                apiKey: "",
+                apiKey: "KYO1evw7nn3NkPIL0dTsvIIlBZMsyrkf",//free for 500
                 summarize: true,
                 showProgress: true,
                 stopOnImageError: true
