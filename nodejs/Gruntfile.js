@@ -57,6 +57,19 @@ module.exports = function(grunt){
         //         }]
         //     }
         // },
+        tinypng: {
+            options: {
+                apiKey: "",
+                summarize: true,
+                showProgress: true,
+                stopOnImageError: true
+            },
+            compress: {
+                files: {
+                  'img/aa.min.png': 'img/aa.png'
+                }
+            }
+        },
         jshint: {//js语法检查
             files: ['js/**/*.js', 'test/**/*.js'],
             options: {
@@ -106,6 +119,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-tinypng');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4.任务
