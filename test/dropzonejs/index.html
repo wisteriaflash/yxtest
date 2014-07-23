@@ -5,7 +5,7 @@
   <title>dropzone test</title>
   <link rel="stylesheet" href="general.css">
   <style>
-  .dropzone1{box-sizing: border-box; position: relative; cursor: pointer;}
+  #J_editPic{text-align: center; cursor: pointer; border: 1px solid; background-color: purple; color: #FFF;}
   </style>
 </head>
 <body>
@@ -17,7 +17,7 @@
     </form>
   </div>
   <div id="J_editPic">
-    edit a picture;
+    edit one picture
   </div>
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/jquery-ui.js"></script>
@@ -40,7 +40,11 @@ dropzone.on('drop', function(){
 });
 //调用上传
 $('#J_editPic').click(function(e){
+  $(dropzone.hiddenFileInput).removeAttr('multiple');//单张
   $('#demo-upload').click();
+  setTimeout(function(){
+    $(dropzone.hiddenFileInput).attr('multiple','multiple');//恢复
+  },5000)
 });
 </script>
 </body>
