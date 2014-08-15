@@ -1,0 +1,11 @@
+{
+  "name": "nodeExpress",
+  "version": "0.0.1",
+  "description": "study express",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "wisteria",
+  "license": "ISC"
+}
