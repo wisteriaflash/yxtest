@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>易迅APP Android版页面流向分布</title>
+  <script src="d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+<style type="text/css">
+body{ background: #000; font-family: "幼圆",Arial,"microsoft yahei",sans-serif;}
+.container{ width: 1024px; height: 1044px; margin: 0 auto; position: relative;}
+h1{ color: #fff; font-size: 24px; text-align: center;  font-weight: normal;}
+p.flag{ font-size: 12px; color:#fff; text-align: right;}
+p span{ margin-right: 32px;}
+p i{ display: inline-block; width: 14px; height:  14px; margin-right: 10px; vertical-align: -4px;}
+p i.pink{ background: #ff27a1; }
+p i.blue{ background: #4edae3; }
+p i.grey{ background: #4e4d4d; }
+#svg_wrapper{ width: 1024px; height: 976px;}
+.downarclayer path,.uparclayer{fill:#979797; stroke: black; stroke-width:0.5px;}
+path.archome{ fill:#4edae3;}
+path.arcclose{ fill:#ff27a1;}
+.text,.data{ font-size: 14px; fill:#a7a7a7; font-family: Arial,"microsoft yahei",sans-serif;}
+.lines{ fill: none; stroke: #a7a7a7; opacity: 0.4; }
+.downarclayer path.arcother{ fill:#4e4d4d;}
+.import{ position: absolute; width: 50%; height: 50%; margin: auto;  top: 0; left: 0; bottom: 0; right: 0; text-align: center; color: #fff; }
+.import p{ margin: 10px 0;}
+.import label{ display: inline-block; text-align: right; width: 120px;}
+.import input{ border-radius: 3px; border: none; padding: 4px 8px;}
+.import .submit{display: inline-block; color: #fff; background: #538ad9; background: -moz-linear-gradient(top,#639ef0,#4376c3); background: -o-linear-gradient(top,#639ef0,#4376c3); background: -webkit-linear-gradient(top,#639ef0,#4376c3); background:  -ms-linear-gradient(top,#639ef0,#4376c3);  border-radius: 2px; border-top: 1px solid #5293cb; border-bottom: 1px solid #3461a9; border-left:1px solid #256abf; border-right: 1px solid #256abf; box-shadow:inset 0 1px 0 #7ebbf4,0 1px 0 rgba(0,0,0,0.3); overflow: hidden; padding: 4px 12px; cursor: pointer; margin-left: 230px;}
+.import .submit:hover{background: #5c92e4; background: -moz-linear-gradient(top,#87baff,#5c92e4); background: -o-linear-gradient(top,#87baff,#5c92e4); background: -webkit-linear-gradient(top,#87baff,#5c92e4); background:  -ms-linear-gradient(top,#87baff,#5c92e4);}
+</style>
+<div class="container">
+  <h1>易迅APP Android系统各页面流向分布</h1>
+  <p class="flag">
+    <span><i class="icon pink"></i>关闭</span>
+    <span><i class="icon blue"></i>回到首页</span>
+    <span><i class="icon grey"></i>其他</span>
+  </p>
+  <div id="svg_wrapper"></div>
+<!--
+  <div class="import">
+    <p><label>易迅APP首页：</label><input type="text"></p>
+    <p><label>H5活动页：</label><input type="text"></p>
+    <p><label>易抢频道：</label><input type="text"></p>
+    <p><label>我的易迅：</label><input type="text"></p>
+    <p><label>搜索：</label><input type="text"></p>
+    <p><label>分类：</label><input type="text"></p>
+    <p><label>列表页：</label><input type="text"></p>
+    <p><label>商品详情页：</label><input type="text"></p>
+    <p><label>购物车：</label><input type="text"></p>
+    <p><label>确认订单页：</label><input type="text"></p>
+    <p><button class="submit" id="submit">提交</button></a></p>
+  </div>
+-->
+</div>
+<script type="text/javascript" src="pipe.js"></script>
+<script type="text/javascript">
+  pipe();
+</script>
+</body>
+</html>

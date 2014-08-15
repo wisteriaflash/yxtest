@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dropzone test</title>
+  <link rel="stylesheet" href="general.css">
+  <style>
+  #J_editPic{text-align: center; cursor: pointer; border: 1px solid; background-color: purple; color: #FFF;}
+  </style>
+</head>
+<body>
+  <div id="dropzone">
+    <form action="http://www.torrentplease.com/dropzone.php" class="dropzone dz-clickable" id="demo-upload">
+      <div class="dz-default dz-message">
+        <span>Drop files here to upload</span>
+      </div>
+    </form>
+  </div>
+  <div id="J_editPic">
+    edit one picture
+  </div>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/dropzone.js"></script>
+<script>
+Dropzone.autoDiscover = false;
+//test
+var dropzone = new Dropzone("#demo-upload", {
+  addRemoveLinks: true,
+  // maxFiles: 1,//单张上传开关
+  // maxFilesize: 256,//默认值
+  previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"dz-progress\"><span class=\"dz-upload\" data-dz-uploadprogress></span></div>\n  <div class=\"dz-success-mark\"><span>✔</span></div>\n  <div class=\"dz-error-mark\"><span>✘</span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>",//预览样式模板
+  init: function() {
+    console.log('init');
+    $('#demo-upload').sortable();
+  }
+});
+dropzone.on('drop', function(){
+  console.log('drop');
+});
+//调用上传
+$('#J_editPic').click(function(e){
+  $(dropzone.hiddenFileInput).removeAttr('multiple');//单张
+  $('#demo-upload').click();
+  setTimeout(function(){
+    $(dropzone.hiddenFileInput).attr('multiple','multiple');//恢复
+  },5000)
+});
+</script>
+</body>
+</html>
