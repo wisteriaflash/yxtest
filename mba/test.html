@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>测试</title>
+</head>
+<body>
+<style type="text/css">
+body{ background: #000; font-family: "幼圆",Arial,"microsoft yahei",sans-serif;}
+.container{ width: 1024px; height: 1044px; margin: 0 auto; position: relative;}
+h1{ color: #fff; font-size: 24px; text-align: center;  font-weight: normal;}
+p.flag{ font-size: 12px; color:#fff; text-align: right;}
+p span{ margin-right: 32px;}
+p i{ display: inline-block; width: 14px; height:  14px; margin-right: 10px; vertical-align: -4px;}
+p i.pink{ background: #ff27a1; }
+p i.blue{ background: #4edae3; }
+p i.grey{ background: #4e4d4d; }
+#svg_wrapper{ width: 1024px; height: 976px;}
+.downarclayer path,.uparclayer{fill:#979797; stroke: black; stroke-width:0.5px;}
+path.archome{ fill:#4edae3;}
+path.arcclose{ fill:#ff27a1;}
+.text,.data{ font-size: 14px; fill:#a7a7a7; font-family: Arial,"microsoft yahei",sans-serif;}
+.lines{ fill: none; stroke: #a7a7a7; opacity: 0.4; }
+.downarclayer path.arcother{ fill:#4e4d4d;}
+.import{ position: absolute; width: 50%; height: 50%; margin: auto;  top: 0; left: 0; bottom: 0; right: 0; text-align: center; color: #fff; }
+.import p{ margin: 10px 0;}
+.import label{ display: inline-block; text-align: right; width: 120px;}
+.import input{ border-radius: 3px; border: none; padding: 4px 8px;}
+.import .submit{display: inline-block; color: #fff; background: #538ad9; background: -moz-linear-gradient(top,#639ef0,#4376c3); background: -o-linear-gradient(top,#639ef0,#4376c3); background: -webkit-linear-gradient(top,#639ef0,#4376c3); background:  -ms-linear-gradient(top,#639ef0,#4376c3);  border-radius: 2px; border-top: 1px solid #5293cb; border-bottom: 1px solid #3461a9; border-left:1px solid #256abf; border-right: 1px solid #256abf; box-shadow:inset 0 1px 0 #7ebbf4,0 1px 0 rgba(0,0,0,0.3); overflow: hidden; padding: 4px 12px; cursor: pointer; margin-left: 230px;}
+.import .submit:hover{background: #5c92e4; background: -moz-linear-gradient(top,#87baff,#5c92e4); background: -o-linear-gradient(top,#87baff,#5c92e4); background: -webkit-linear-gradient(top,#87baff,#5c92e4); background:  -ms-linear-gradient(top,#87baff,#5c92e4);}
+</style>
+<div class="container">
+  <h1>测试</h1>
+  <p class="flag">
+    <span><i class="icon pink"></i>关闭</span>
+    <span><i class="icon blue"></i>回到首页</span>
+    <span><i class="icon grey"></i>其他</span>
+  </p>
+  <div id="svg_wrapper"></div>
+</div>
+<script src="d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+//data
+var points = [
+    [ [374,165],[314,103],[260,52],[190,67] ], //home-activity
+    [ [442,231],[421,244],[335,250] ],  //home-channel
+    [ [486,225],[510,235],[544,241] ],  //home-search
+    [ [526,236],[616,212],[678,257],[714,290] ],//home-category
+    [ [580,222],[748,103],[834,116] ], //home-profile
+    [ [78,185],[52,290],[185,448],[317,549] ], //activity-detail
+    [ [245,452],[306,512],[323,562], ], //channel-detail
+    [ [718,252]], //profile-category
+    [ [756,280],[800,356],[802,432],[752,490],[632,611]], //profile-cart
+    [ [810,325],[820,579],[737,838],[572,826],[521,843]], //profile-order
+    [ [486,380],[516,416] ], //search-list
+    [ [648,420],[595,406],[532,415] ], //category-list
+    [ [428,602],[383,558],[320,574] ], //list-detail
+    [ [542,612],[623,648],[751,559],[895,344],[776,270],[745,262],[715,285] ], //list-category
+    [ [632,558],[623,354],[636,285],[578,228],[552,235] ], //list-search
+    [ [202,746],[154,568],[450,386],[508,420] ],//detail-list
+    [ [300,830],[166,810],[108,473],[160,320],[280,230] ],//detail-channel
+    [ [385,836],[279,892],[44,790],[36,320],[70,49],[172,78] ], //detail-activity
+    [ [450,759],[509,649],[606,631],[645,657] ],//detail-cart
+    [ [546,754],[501,672],[398,581],[323,575] ], //cart-detail
+    [ [592,804],[553,814],[520,842] ],//cart-order
+    [ [650,862],[850,858],[962,338],[940,112],[876,78],[835,112] ], //cart-profile
+    [ [668,810],[720,780],[781,583],[781,583],[793,305],[723,286] ], //cart-category
+    [ [440,942],[402,806],[456,668],[410,586],[323,576] ], //order-detail
+    [ [582,968],[757,868],[766,658],[674,632] ], //order-cart
+  ];
+//global
+window.$ = function(eleId){
+  return document.getElementById(eleId);
+}
+var wrapper = $("svg_wrapper")
+var w = 1024, h = 980;
+//init
+var pipe = d3.select(wrapper)
+      .append("svg") 
+      .attr({
+        width : w,
+        height: h
+});
+var line = d3.svg.line()
+            .x(function(d){return d[0];})
+            .y(function(d){return d[1];})
+            .interpolate("basis");
+var size = 12;
+var data = points[0];
+pipe.append("path")
+.attr({
+  "d" : line(data), 
+  "stroke-width" : size +"px",
+  "class" : "lines"
+});
+
+
+</script>
+</body>
+</html>

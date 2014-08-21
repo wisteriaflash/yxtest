@@ -13,7 +13,7 @@
   ];
 
 (function(){
-  var subBtn = getElementById("submit");
+  var subBtn = document.getElementById("submit");
   
 })()
 
@@ -26,7 +26,7 @@ function pipe(){
   var w = 1024,
     h = 980; 
 
-  
+//画线的各个点
   var points = [
     [ [374,165],[314,103],[260,52],[190,67] ], //home-activity
     [ [442,231],[421,244],[335,250] ],  //home-channel
@@ -70,7 +70,8 @@ function pipe(){
   d3.text("pipe.csv",function(text){
     var csv = d3.csv.parseRows(text);
     //console.log(csv);
-    var json = buildTree(csv);
+    var json = buildTree(csv);//csv是占比数据，代表了圆环的占比、线条的粗细
+                              //占比越多，线条越粗
     drawCircle(_testdata,json);
   })
 
@@ -209,7 +210,7 @@ function pipe(){
 
       var currentNode = json.children[i];
       var startArc = -0.5 * Math.PI;
-      
+
       for(var j in currentNode.children){
         var perPie = parseFloat(currentNode.children[j].size)/100 * Math.PI;
         var endArc =  startArc - perPie;
@@ -281,7 +282,7 @@ function pipe(){
     data.unshift([startx,starty]);
     data.push([endx,endy]);
 
-    //console.log(data);
+    // console.log(j,"===",data);
     var line = d3.svg.line()
             .x(function(d){return d[0];})
             .y(function(d){return d[1];})
