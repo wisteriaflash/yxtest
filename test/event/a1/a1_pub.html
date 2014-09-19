@@ -1,0 +1,252 @@
+<style>
+/*页面框架*/
+#wrap{overflow:hidden;position:relative;width:100%;height:100%;}
+.page{
+  overflow:hidden;position:absolute;width:100%;height:100%;top:0;left:0;
+  -webkit-transition:all 1s ease-in-out;-moz-transition:all 1s ease-in-out;-ms-transition:all 1s ease-in-out;transition:all 1s ease-in-out;
+}
+.main{overflow:hidden;position:absolute;width:100%;height:100%;top:0;bottom:0;left:0;right:0;margin:auto;}
+
+
+.page      {-webkit-transform:translate3d(0,-100%,0);-moz-transform:translate3d(0,-100%,0);-ms-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);}
+.in.page   {-webkit-transform:translate3d(0,   0%,0);-moz-transform:translate3d(0,   0%,0);-ms-transform:translate3d(0,   0%,0);transform:translate3d(0,   0%,0);}
+.in ~ .page{-webkit-transform:translate3d(0, 100%,0);-moz-transform:translate3d(0, 100%,0);-ms-transform:translate3d(0, 100%,0);transform:translate3d(0, 100%,0);}
+
+
+
+#aside{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+
+
+
+#loading.in{display:block;}
+#loading{
+  display:none;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;overflow:hidden;width:160px;height:20px;border-radius:15px;
+  border:solid 2px #aaa;background:#ccc;color:#000;text-align:center;font-size:14px;line-height:20px;
+}
+
+
+#music{
+  position:absolute;left:0%;bottom:1%;width:90px;height:45px;background:url(http://img12.360buyimg.com/cms/jfs/t355/88/621163629/17077/1926edb0/541a532aN72724f93.png) no-repeat -90px 0;background-size:90px 90px;pointer-events:auto;
+  -webkit-transition:background-position 1s;-moz-transition:background-position 1s;-ms-transition:background-position 1s;transition:background-position 1s;
+}
+#music::after{content:' ';position:absolute;top:0;left:0;width:50%;height:100%;background:url(http://img12.360buyimg.com/cms/jfs/t355/88/621163629/17077/1926edb0/541a532aN72724f93.png) no-repeat left bottom;background-size:90px 90px;}
+
+#music.on{background-position:0 0;}
+#music.on::after{background-position:right bottom;}
+
+/*自定义元素*/
+#wrap{-webkit-perspective:1000;}
+.page      {-webkit-transform:rotateX( 90deg) translate3d(0,-100%,0);-webkit-transition:all 1s;}
+.in.page   {-webkit-transform:rotateX(  0deg) translate3d(0,   0%,0);z-index:1;}
+.in ~ .page{-webkit-transform:rotateX(-90deg) translate3d(0, 100%,0);}
+
+#loading{border-color:#360943;background:#903b9a;color:#fff;}
+
+#page1.onload .main{background:url(http://img10.360buyimg.com/cms/jfs/t370/28/400797491/108266/c38ac077/541a532aN97bdcd4d.jpg) no-repeat center;background-size:100% 100%;}
+#page2.onload .main{background:url(http://img10.360buyimg.com/cms/jfs/t313/69/611040668/118572/e0b1d938/541a532cN06f9c017.jpg) no-repeat center;background-size:100% 100%;}
+#page3.onload .main{background:url(http://img12.360buyimg.com/cms/jfs/t427/39/389163510/162661/3a4f201c/541a532dN712f726d.jpg) no-repeat center;background-size:100% 100%;}
+#page4.onload .main{background:url(http://img12.360buyimg.com/cms/jfs/t274/212/606142816/185858/257009da/541a532eN23106937.jpg) no-repeat center;background-size:100% 100%;}
+#page5.onload .main{background:url(http://img14.360buyimg.com/cms/jfs/t274/221/600850139/161598/6cc30227/541a5330N95618fcc.jpg) no-repeat center;background-size:100% 100%;}
+#page6.onload .main{background:url(http://img13.360buyimg.com/cms/jfs/t415/110/382048084/50377/bff5e8e2/541a5331N2dc392dc.jpg) no-repeat center;background-size:100% 100%;}
+#page7.onload .main{background:url(http://img11.360buyimg.com/cms/jfs/t376/37/391287302/101526/ad7bf658/541a5335Nf3240161.jpg) no-repeat center;background-size:100% 100%;}
+#page8.onload .main{background:url(http://img14.360buyimg.com/cms/jfs/t364/213/390683863/117541/46fa1f36/541a5337N0fd12005.jpg) no-repeat center;background-size:100% 100%;}
+#page9.onload .main{background:url(http://img10.360buyimg.com/cms/jfs/t334/88/612267842/97113/a01cd4ae/541a5339N618aa7e9.jpg) no-repeat center;background-size:100% 100%;}
+
+
+#arrow{
+  position:absolute;bottom:1%;left:0;right:0;margin:auto;width:8.4375%;height:5.625%;background:url(http://img13.360buyimg.com/cms/jfs/t400/18/397464504/2176/59ce2c64/541a5329N685df03c.png) no-repeat;background-size:100% 100%;
+  -webkit-animation:arrow 2s infinite;
+}
+@-webkit-keyframes arrow{
+0%,100%{-webkit-transform:translateY(0);}
+50%{-webkit-transform:translateY(-30%);}
+}
+.in +* #arrow{display:none;}
+
+
+.download{position:absolute;top:61.5625%;left:36.25%;width:27.5%;height:11.875%;}
+
+
+
+#page6 .ele{-webkit-transform:translateX(100%);-webkit-transition:all 1.4s;}
+#page6.in .ele{-webkit-transform:translateX(0);}
+
+#page6 .e1{position:absolute;top:0;left: 7.8125%;width:21.9375%;height:100%;background:url(http://img14.360buyimg.com/cms/jfs/t424/42/406422217/85282/eb2cb0d9/541a5332N178ed250.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:.8s;}
+#page6 .e2{position:absolute;top:0;left:28.90625%;width:21.9375%;height:100%;background:url(http://img11.360buyimg.com/cms/jfs/t232/114/2433607487/107970/b01c7c0d/541a5333N9364a7f5.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:1s;}
+#page6 .e3{position:absolute;top:0;left:50%;width:21.9375%;height:100%;background:url(http://img12.360buyimg.com/cms/jfs/t385/31/380691472/98288/828a0115/541a5334N23ea2531.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:1.2s;}
+#page6 .e4{position:absolute;top:0;left:71.09375%;width:21.9375%;height:100%;background:url(http://img10.360buyimg.com/cms/jfs/t430/48/406169842/95532/b4767eb0/541a5335N42ce7813.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:1.4s;}
+
+
+#page8 .e1{position:absolute;bottom:12.3%;left:0;width:100%;height:14.375%;background:url(http://img13.360buyimg.com/cms/jfs/t214/35/2487761025/20956/703b61d9/541a5337N11dde1cd.jpg) no-repeat;background-size:100% 100%;}
+#page8 .e2{position:absolute;bottom:26.666%;right:3.75%;width:25%;height:16.666%;background:url(http://img10.360buyimg.com/cms/jfs/t394/37/378041398/32271/a87dfe70/541a5338N3d3c0a4d.png) no-repeat;background-size:100% 100%;}
+
+#page8 .e1{opacity:0;-webkit-transform:scale(2,2);-webkit-transition:all .5s 1s ease-in;}
+#page8 .e2{-webkit-transform:translateX(200%) rotate(360deg);-webkit-transition:all 1s 1.5s;}
+
+#page8.in .e1{opacity:1;-webkit-transform:scale(1,1);}
+#page8.in .e2{-webkit-transform:translateX(0) rotate(0);}
+
+
+#popShare{position:absolute;top:0;left:0;width:100%;height:100%;background:url(http://img13.360buyimg.com/cms/jfs/t307/103/603718736/16282/20c63664/541a533aN80d26831.png) no-repeat;background-size:100% 100%;opacity:0;pointer-events:none;-webkit-transition:all .5s;}
+#popShare.on{opacity:1;pointer-events:auto;}
+
+
+.sc{position:absolute;top:47%;left:0;width:100%;height:7.5%;}
+</style>
+
+
+<div id="wrap">
+  <div id="loading" class="in">loading</div>
+  <!--页面1-->
+  <section class="page" id="page1">
+    <div class="main">
+  </div>
+  </section>
+
+  <!--页面2-->
+  <section class="page" id="page2">
+    <div class="main">
+  </div>
+  </section>
+
+  <!--页面3-->
+  <section class="page" id="page3">
+    <div class="main">
+  </div>
+  </section>
+
+  <!--页面4-->
+  <section class="page" id="page4">
+    <div class="main">
+  </div>
+  </section>
+
+  <!--页面5-->
+  <section class="page" id="page5">
+    <div class="main">
+  </div>
+  </section>
+
+  <!--页面6-->
+  <section class="page" id="page6">
+    <div class="main">
+    <div class="ele e1"></div>
+    <div class="ele e2"></div>
+    <div class="ele e3"></div>
+    <div class="ele e4"></div>
+  </div>
+  </section>
+
+  <!--页面7-->
+  <section class="page" id="page7">
+    <div class="main">
+  </div>
+  </section>
+
+  <!--页面8-->
+  <section class="page" id="page8">
+    <div class="main">
+    <div class="ele e1"></div>
+    <div class="ele e2"></div>
+  </div>
+  </section>
+
+  <!--页面9-->
+  <section class="page" id="page9">
+    <div class="main">
+    <a class="sc" href="http://ap.vip.com/index.php?m=auto_allot_warehouse&code=allot_warehouse_wap_xxx0821&wapid=ap_281" mars_sead="btn_shoucang"></a>
+    <a class="download" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.achievo.vipshop&g_f=991811" mars_sead="app_download_btn"></a>
+  </div>
+  </section>
+
+
+  <!--控件层-->
+  <aside id="aside">
+    <div class="main">
+    <div id="arrow"></div>
+    <div id="popShare"></div>
+  </div>
+    <div id="music" class="on" style="display:none;"></div>
+  </aside>
+
+</div>
+<script>
+//framework
+var sapp=function(){var a={},b={};return b.move=function(){event.preventDefault()},b.start=function(a){b.ox=a.clientX||a.changedTouches[0].clientX,b.oy=a.clientY||a.changedTouches[0].clientY},b.end=function(a){b.nx=a.clientX||a.changedTouches[0].clientX,b.ny=a.clientY||a.changedTouches[0].clientY;var c=b.nx-b.ox,d=b.ny-b.oy;25>c*c+d*d||(Math.abs(c)>Math.abs(d)?sapp.event.call("swipe",{dir:c>0?"swipeRight":"swipeLeft"}):sapp.event.call("swipe",{dir:d>0?"swipeDown":"swipeUp"}))},document.addEventListener("touchstart",b.start),document.addEventListener("touchmove",b.move),document.addEventListener("touchend",b.end),document.addEventListener("mousedown",b.start),document.addEventListener("mouseup",b.end),document.onmousewheel=function(a){sapp.event.call("swipe",{dir:a.wheelDelta>0?"swipeDown":"swipeUp"})},a}();sapp.init=function(a){var b=$(a.page),c={},d=!1;sapp.page={now:-1,out:-1,length:b.length,next:function(){if(!d){var a=this.now+1<=this.length;a&&this.go(this.now+1),sapp.event.call("pageNext",{page:this.now,notEdge:a})}},prev:function(){if(!d){var a=this.now-1>=1;a&&this.go(this.now-1),sapp.event.call("pagePrev",{page:this.now,notEdge:a})}},go:function(b){if(!(d||(b=parseInt(b)||1,b==this.now||1>b||this.length<b))){var e=c[this.out],f=c[this.now];this.out=this.now,this.now=b,e&&e.sec.removeClass("out"),f&&f.sec.removeClass("in").addClass("out"),c[b].sec.addClass("in");for(var g=0;g<a.preload;g++){var h=b+g;if(h>this.length)break;c[h].load()}sapp.event.call("pageGo",{page:this.now}),sapp.page.lock(),setTimeout(sapp.page.unlock,1e3)}},lock:function(){d=!0},unlock:function(){d=!1}};for(var e=0;e<sapp.page.length;e++){var f={index:e+1,sec:b.eq(e),main:b.eq(e).children(".main"),loaded:!1};f.name=f.sec.attr("id"),f.load=function(){return this.loaded||(this.loaded=!0,this.sec.addClass("onload")),f},sapp.page[f.name]=f,c[f.index]=f,f.index<=a.preload&&f.load()}c[sapp.page.length].load()},sapp.event=function(){var a={},b={};return b.pool={},a.call=function(a,c){var d=b.getPool(a).listeners;for(var e in d)d[e](c||{})},a.on=function(c,d){var e=b.getPool(c).listeners,f=b.getFuncPos(e,d);return"function"==typeof d&&-1==f&&e.push(d),a},a.off=function(c,d){var e=b.getPool(c).listeners,f=b.getFuncPos(e,d);return-1!=f&&e.splice(f,1),a},b.getFuncPos=function(a,b){for(var c in a)if(a[c]===b)return c;return-1},b.getPool=function(a){return b.pool[a]=b.pool[a]||{listeners:[]},b.pool[a]},a}(),sapp.ua=function(){var a,b=navigator.userAgent.toLowerCase(),c=function(a){return-1!=b.indexOf(a)};return a={toString:function(){return b},weixin:c("micromessenger"),uc:c("ucbrowser"),ucweb:c("ucweb"),android:c("android"),ipad:c("ipad"),iphone:c("iphone"),ios:c("ipad")||c("iphone")||c("ipod")}}(),sapp.sound=function(){var a={},b={};return b.pool={},a.add=function(a,c){var d=a.split(/\/|\./),e=d[d.length-2];b.pool[e]=$.extend(new Audio(a),{preload:!0},c),$(b.pool[e]).on("ended",function(a){a.target.currentTime=0,a.target.currentTime&&(a.target.src=a.target.src),a.target.loop?a.target.play():(a.target.pause(),b.bgmusic&&b.bgmusicPlaying&&b.bgmusic.play())})},a.play=function(a,c){if(!a||"bgmusic"==a)return b.bgmusic&&(b.bgmusicPlaying=!0,b.bgmusic.play()),void 0;var d=b.pool[a];if(d){try{d.currentTime=c||0}catch(e){}b.bgmusic&&b.bgmusic.pause(),d.play()}},a.pause=function(a){if(a&&"bgmusic"!=a){var d=b.pool[a];d&&d.pause(),b.bgmusic&&b.bgmusicPlaying&&b.bgmusic.play()}else{b.bgmusic&&(b.bgmusicPlaying=!1,b.bgmusic.pause());for(var c in b.pool)b.pool[c].pause()}},a.bgmusic=function(a,c){b.bgmusic=$.extend(new Audio(a),{preload:!0,loop:!0,autoplay:!0},c),b.bgmusicPlaying=b.bgmusic.autoplay},a}(),sapp.share=function(a){var b={};return a=$.extend({title:document.title,text:document.title,url:document.location.href,img:"http://s2.vipstatic.com/img/te/resource/vip.png"},a),document.addEventListener("WeixinJSBridgeReady",function(){WeixinJSBridge.on("menu:share:timeline",function(){sapp.event.call("share",{type:"weixin_timeline"}),WeixinJSBridge.invoke("shareTimeline",{img_url:a.img,link:a.url,desc:a.text,title:a.text})}),WeixinJSBridge.on("menu:share:appmessage",function(){sapp.event.call("share",{type:"weixin_message"}),WeixinJSBridge.invoke("sendAppMessage",{img_url:a.img,link:a.url,desc:a.text,title:a.title})}),WeixinJSBridge.on("menu:share:weibo",function(){sapp.event.call("share",{type:"weibo"}),WeixinJSBridge.invoke("shareWeibo",{content:a.text,url:a.url})})}),b.setText=function(b){a.text=b},b},sapp.fill=function(a){var b={width:"100% 0%",height:"0% 100%",cover:"0% 0%",contain:"100% 100%"};a=$.extend({width:640,height:960,mode:"100% 100%"},a);var c=$(a.target),d=$(window);a.mode=(b[a.mode]||a.mode).split(" "),a.mode[1]=a.mode[1]||a.mode[0],$(window).resize(function(){var b=d.width()/a.width,e=d.height()/a.height,f=Math.max(b,e),h=(Math.min(b,e),100*(b/parseInt(a.mode[0]))),i=100*(e/parseInt(a.mode[1])),j=Math.min(h,i,f);c.css({width:parseInt(j*a.width),height:parseInt(j*a.height)})}).resize()};
+
+//config app
+$(document).on('touchstart', function(e){
+  // e.preventDefault(); //fix androlid bug
+});
+$(window).on("load", function(){
+  //页面入口
+  sapp.page.go(location.hash.substr(1));
+
+  //loading
+  $("#loading").removeClass("in");
+});
+
+$(function(){
+  //初始化
+  sapp.init({
+    page:".page",
+    preload:3
+  });
+
+  //页面滑动逻辑
+  sapp.event.on("swipe", function(e){
+    switch(e.dir){
+      case "swipeUp" : sapp.page.next(); break;
+      case "swipeDown" : sapp.page.prev(); break;
+    }
+  });
+
+
+  //分享
+  var share = sapp.share({
+      text : $("meta[name='shareText']").attr("content"),
+       img : $("meta[name='shareImg']").attr("content")
+  });
+  sapp.event.on("share", function(e){
+    Mar.Seed.request("sapp","click","share"); //分享统计
+  });
+
+  //分享弹层
+  var popShare = $("#popShare");
+  var showPopShare = function(e){
+    if(e.notEdge) return;
+    popShare.addClass("on");
+    sapp.page.lock();
+  }
+  var hidePopShare = function(e){
+    popShare.removeClass("on");
+    sapp.page.unlock();
+  }
+  sapp.event.on("pageNext", showPopShare);
+  popShare.on("click", hidePopShare);
+  sapp.event.on("swipe", function(e){
+    if(e.dir=="swipeDown" && popShare.hasClass("on")){
+      hidePopShare();
+    }
+  });
+  
+  var winH = $(window).height();
+  $('#wrap').css('height', winH);
+
+  //背景音乐
+  // sapp.sound.bgmusic("bgmusic.mp3");
+  // $(window).one("touchstart",function(){
+  //   sapp.sound.play();
+  // });
+  // $("#music").click(function(){
+  //   if($(this).hasClass("on")){
+  //     sapp.sound.pause();
+  //   }else{
+  //     sapp.sound.play();
+  //   }
+  //   $(this).toggleClass("on");
+  // });
+
+
+});
+</script>
