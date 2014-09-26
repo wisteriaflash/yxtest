@@ -60,7 +60,7 @@
   0%,100%{-webkit-transform:translateY(0);}
   50%{-webkit-transform:translateY(-30%);}
 }
-.in +* #arrow{display:none;}
+/*.in +* #arrow{display:none;}*/
 .download{position:absolute;top:62.5625%;left:32.25%;width:35.5%;height:15.875%;}
 
 /*element*/
@@ -184,24 +184,13 @@ $(function(){
   var p6e1_fixsw = winW, p6e1_fixsh = parseInt(winH/960*p6e1_sh);
   p6e1_node.css('background-size', p6e1_fixsw+'px '+p6e1_fixsh+'px');
 
-  //分享弹层
-  var popShare = $("#popShare");
-  var showPopShare = function(e){
+  //goback
+  var goback = function(e){
     if(e.notEdge) return;
-    popShare.addClass("on");
-    sapp.page.lock();
+    sapp.page.go(1);
   }
-  var hidePopShare = function(e){
-    popShare.removeClass("on");
-    sapp.page.unlock();
-  }
-  sapp.event.on("pageNext", showPopShare);
-  popShare.on("click", hidePopShare);
-  sapp.event.on("swipe", function(e){
-    if(e.dir=="swipeDown" && popShare.hasClass("on")){
-      hidePopShare();
-    }
-  });
+  sapp.event.on("pageNext", goback);
+
   //init height
   function initHandler(){
     var winH = $(window).height();
