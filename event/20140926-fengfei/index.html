@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <script src="http://sale.jd.com/jm.htm?js=/m-misc/script/appframework.js&t=1409042034"></script>
+  <title>锋菲恋</title>
+</head>
+
+<body>
+<style>
+/*css reset*/
+body{line-height:1.4;font-size:14px;color:#666;margin:0 auto;background-color:#FFF;font-family:"Helvetica Neue", Helvetica, STHeiTi, Tahoma, sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,figure {padding:0;margin:0;}
+fieldset,img{border:0;}
+:focus {outline:0;}
+address,caption,cite,code,dfn,em,th,var,optgroup {font-style:normal;font-weight:normal;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;}
+abbr,acronym {border:0;font-variant:normal;}
+input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+code,kbd,samp,tt {font-size:100%;}
+body {line-height:1.5;}
+ol,ul,li {list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+caption,th {text-align:left;}
+sup,sub {font-size:100%;vertical-align:baseline;}
+blockquote,q {quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after {content:'';content:none;}
+input,button,div,section{
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color:transparent;/* For some Androids */
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+body{line-height:1.4;font-size:14px;color:#666;margin:0 auto;background-color:#FFF;font-family:"Helvetica Neue", Helvetica, STHeiTi, Tahoma, sans-serif;}
+
+
+
+
+/*页面框架*/
+#wrap{overflow:hidden;position:relative;width:100%;height:100%; -webkit-perspective:1000;}
+html,body{background:#c68e7d;}
+.page{
+  overflow:hidden;position:absolute;width:100%;height:100%;top:0;left:0;
+  -webkit-transition:all 1s ease-in-out;
+  -moz-transition:all 1s ease-in-out;
+  -ms-transition:all 1s ease-in-out;
+  transition:all 1s ease-in-out;
+}
+.main{overflow:hidden;position:absolute;width:100%;height:100%;top:0;bottom:0;left:0;right:0;margin:auto;}
+.page{
+  -webkit-transform: rotateX(90deg) translate3d(0,-100%,0);
+  -moz-transform: rotateX(90deg) translate3d(0,-100%,0);
+  -ms-transform: rotateX(90deg) translate3d(0,-100%,0);
+  transform: rotateX(90deg) translate3d(0,-100%,0);
+  -webkit-transition:all 1s;
+}
+.in.page{
+  z-index:1;
+  -webkit-transform:rotateX(0deg) translate3d(0,0%,0);
+  -moz-transform:rotateX(0deg) translate3d(0,0%,0);
+  -ms-transform:rotateX(0deg) translate3d(0,0%,0);
+  transform:rotateX(0deg) translate3d(0,0%,0);
+}
+.in ~ .page{
+  -webkit-transform: rotateX(-90deg) translate3d(0, 100%,0);
+  -moz-transform: rotateX(-90deg) translate3d(0, 100%,0);
+  -ms-transform: rotateX(-90deg) translate3d(0, 100%,0);
+  transform: rotateX(-90deg) translate3d(0, 100%,0);
+}
+#aside{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+#loading.in{display:block;}
+#loading{  display:none;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;overflow:hidden;width:160px;height:24px;border-radius:15px; background:#fff;color:#450003;text-align:center;font-size:14px;line-height:24px;}
+
+/*page*/
+.page.onload .main{background-repeat: no-repeat; background-position: center; background-size: 100%;}
+.page .page-ele{position: absolute; left: 0; top: 0; width: 640px; height: 880px; background-color: transparent; z-index: 10;
+  -webkit-transform: scale(0.5); -webkit-transform-origin: 0 0;
+}
+.page .page-ele img{position: absolute; display: block; -webkit-transition:all 0.5s; opacity: 0; -webkit-transform:translateX(-5%);}
+.page .page-ele .shh5-title{-webkit-transition-delay:1s;}
+.page .page-ele .shh5-txt{-webkit-transition-delay:1.5s;}
+.page.in .page-ele img{opacity: 1; -webkit-transform:translateX(0);}
+
+.page1.onload .main{background-image: url(img/p1.jpg);}
+.page2.onload .main{background-image: url(img/p2.jpg);}
+.page3.onload .main{background-image: url(img/p3.jpg);}
+.page4.onload .main{background-image: url(img/p4.jpg);}
+.page5.onload .main{background-image: url(img/p5.jpg);}
+.page6.onload .main{background-image: url(img/p6.jpg);}
+.linkpage{background-color: #57224C;}
+.linkpage .page-ele{-webkit-transition: all 0; width: 720px; height: 1280px; padding-top: 266px; padding-left: 18px;}
+.linkpage .page-ele a{width: 333px; height: 490px; display: block; float: left; margin: 0 16px 16px 0;}
+#arrow{
+  position:absolute;bottom:1%;left:0;right:0;margin:auto;width:8.4375%;height:5.625%;background:url(img/arrow.png) no-repeat;background-size:100%;
+  -webkit-animation:arrow 2s infinite;
+}
+@-webkit-keyframes arrow{
+  0%,100%{-webkit-transform:translateY(0);}
+  50%{-webkit-transform:translateY(-30%);}
+}
+.in +* #arrow{display:none;}
+.download{position:absolute;top:62.5625%;left:32.25%;width:35.5%;height:15.875%;}
+
+/*element*/
+.page1 .page-ele .shh5-title{left: 46px; top: 0;}
+.page1 .page-ele .shh5-txt{left: 77px; bottom: 0;}
+.page2 .page-ele .shh5-title{right: 63px; top: 0;}
+.page2 .page-ele .shh5-txt{left: 110px; bottom: 0;}
+.page2 .page-ele .shh5-title{-webkit-transform:translateX(5%);}
+.page3 .page-ele .shh5-title{left: 88px; top: 37px;}
+.page3 .page-ele .shh5-txt{left: 74px; bottom: 0;}
+.page4 .page-ele .shh5-title{left: 174px; top: 37px;}
+.page4 .page-ele .shh5-txt{left: 0px; bottom: 0; -webkit-transform: scale(0.85) translateX(-5%);}
+.page4.in .page-ele .shh5-txt{-webkit-transform: scale(0.85) translateX(0);}
+
+
+/*share*/
+#popShare{position:absolute;top:0;left:0;width:100%;height:100%;background: rgba(33,3,4,.6); ;opacity:0;pointer-events:none;-webkit-transition:all .5s;}
+#popShare .shh5-share{position: absolute; right: 10%; top: 40%; width: 57.34%; height: 23.22%; background: url(img/mask-el.png) no-repeat; background-size: 100% 100%; display: block; -webkit-transform:scale(0,0) rotate(70deg);}
+#popShare.on{opacity:1;pointer-events:auto;}
+#popShare.on .shh5-share{
+  right: 7.18%; top: 2.4%; 
+  -webkit-transition-duration:1s;
+  -webkit-transform:scale(1,1) rotate(0deg);}
+</style>
+<div id="wrap">
+  <div id="loading" class="in">loading</div>
+  <!--页面1-->
+  <section class="page page1">
+    <div class="main">
+      <div class="page-ele">
+        <img src="img/p1-title.png" alt="" class="shh5-title">
+        <img src="img/p1-txt.png" alt="" class="shh5-txt">
+      </div>
+    </div>
+  </section>
+  <!--页面2-->
+  <section class="page page2">
+    <div class="main">
+      <div class="page-ele">
+        <img src="img/p2-title.png" alt="" class="shh5-title">
+        <img src="img/p2-txt.png" alt="" class="shh5-txt">
+      </div>
+    </div>
+  </section>
+  <!--页面3-->
+  <section class="page page3">
+    <div class="main">
+      <div class="page-ele">
+        <img src="img/p3-title.png" alt="" class="shh5-title">
+        <img src="img/p3-txt.png" alt="" class="shh5-txt">
+      </div>
+    </div>
+  </section>
+  <!--页面4-->
+  <section class="page page4">
+    <div class="main">
+      <div class="page-ele">
+        <img src="img/p4-title.png" alt="" class="shh5-title">
+        <img src="img/p4-txt.png" alt="" class="shh5-txt">
+      </div>
+    </div>
+  </section>
+  <!--页面5-->
+  <section class="page page5 linkpage">
+    <div class="main">
+      <div class="page-ele">
+        <a href="http://item.jd.com/1000001313.html"></a>
+        <a href="http://item.jd.com/611308.html"></a>
+        <a href="http://item.jd.com/1103893547.html"></a>
+        <a href="http://item.jd.com/1007927451.html"></a>
+      </div>
+    </div>
+  </section>
+  <!--页面6-->
+  <section class="page page6 linkpage">
+    <div class="main">
+      <div class="page-ele">
+        <a href="http://item.jd.com/1016050683.html"></a>
+        <a href="http://item.jd.com/11456830.html"></a>
+        <a href="http://item.jd.com/1267720897.html"></a>
+        <a href="http://item.jd.com/890636.html"></a>
+      </div>
+  </div>
+  </section>
+  <!--控件层-->
+  <aside id="aside">
+    <div class="main">
+      <div id="arrow"></div>
+    </div>
+  </aside>
+</div>
+<script src="js/sapp.js" type="text/javascript" charset="utf-8"></script>
+<script>
+//config app
+$(window).on("load", function(){
+  //页面入口
+  sapp.page.go(location.hash.substr(1));
+  //loading
+  $("#loading").removeClass("in");
+  // $('.page').css('display','none');
+});
+$(function(){
+  //初始化
+  sapp.init({
+    page:".page",
+    preload:3
+  });
+  //页面滑动逻辑
+  sapp.event.on("swipe", function(e){
+    switch(e.dir){
+      case "swipeUp" : sapp.page.next(); break;
+      case "swipeDown" : sapp.page.prev(); break;
+    }
+  });
+  //p6-ele
+  var p6e1_node = $('#page6 .e1');
+  var p6e1_sw = 640, p6e1_sh = 165;
+  var winW = $(window).width(), winH = $(window).height();
+  var p6e1_fixsw = winW, p6e1_fixsh = parseInt(winH/960*p6e1_sh);
+  p6e1_node.css('background-size', p6e1_fixsw+'px '+p6e1_fixsh+'px');
+
+  //分享弹层
+  var popShare = $("#popShare");
+  var showPopShare = function(e){
+    if(e.notEdge) return;
+    popShare.addClass("on");
+    sapp.page.lock();
+  }
+  var hidePopShare = function(e){
+    popShare.removeClass("on");
+    sapp.page.unlock();
+  }
+  sapp.event.on("pageNext", showPopShare);
+  popShare.on("click", hidePopShare);
+  sapp.event.on("swipe", function(e){
+    if(e.dir=="swipeDown" && popShare.hasClass("on")){
+      hidePopShare();
+    }
+  });
+  //init height
+  function initHandler(){
+    var winH = $(window).height();
+    $('#wrap').css('height', winH);
+    var winW = $(window).width();
+    var eleCon_sw = 640, eleCon_sh = 880;
+    var moScale = winW/eleCon_sw;
+    var fixTop = (winH - moScale*eleCon_sh)/2;
+    fixTop = parseInt(fixTop);
+    //css
+    $('.page .page-ele').css({
+     '-webkit-transform': 'scale('+moScale+')',
+     top: fixTop+'px'
+    });
+    //link
+    var linkNode = $('.linkpage .main');
+    var imgSw = 720, imgSh = 1280;
+    var swScale = winW/imgSw, shScale = winH/imgSh;
+    var sizeScale = swScale;
+    if(shScale<swScale){
+      linkNode.css('background-size','auto 100%');
+      sizeScale = shScale;
+    }
+    var linkpageSw = parseInt(sizeScale*imgSw);
+    var linkpageSh = parseInt(sizeScale*imgSh);
+    var linkpageLeft = (winW - linkpageSw)/2;
+    var linkpageTop = (winH - linkpageSh)/2;
+    linkNode.find('.page-ele').css({
+      '-webkit-transform': 'scale('+sizeScale+')',
+      left: linkpageLeft,
+      top : linkpageTop
+    });
+  }
+  initHandler();
+});
+</script>
+</body>
+</html>

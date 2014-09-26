@@ -1,0 +1,127 @@
+/*css reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,figure {padding:0;margin:0;}
+fieldset,img{border:0;}
+:focus {outline:0;}
+address,caption,cite,code,dfn,em,th,var,optgroup {font-style:normal;font-weight:normal;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;}
+abbr,acronym {border:0;font-variant:normal;}
+input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+code,kbd,samp,tt {font-size:100%;}
+body {line-height:1.5;}
+ol,ul,li {list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+caption,th {text-align:left;}
+sup,sub {font-size:100%;vertical-align:baseline;}
+blockquote,q {quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after {content:'';content:none;}
+
+input,button,div,section{
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color:transparent;/* For some Androids */
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+
+
+/*页面框架*/
+html,body,#wrap{overflow:hidden;position:relative;width:100%;height:100%;}
+
+.page{
+  overflow:hidden;position:absolute;width:100%;height:100%;top:0;left:0;
+  -webkit-transition:all 1s ease-in-out;-moz-transition:all 1s ease-in-out;-ms-transition:all 1s ease-in-out;transition:all 1s ease-in-out;
+}
+.main{overflow:hidden;position:absolute;width:100%;height:100%;top:0;bottom:0;left:0;right:0;margin:auto;}
+
+
+.page      {-webkit-transform:translate3d(0,-100%,0);-moz-transform:translate3d(0,-100%,0);-ms-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);}
+.in.page   {-webkit-transform:translate3d(0,   0%,0);-moz-transform:translate3d(0,   0%,0);-ms-transform:translate3d(0,   0%,0);transform:translate3d(0,   0%,0);}
+.in ~ .page{-webkit-transform:translate3d(0, 100%,0);-moz-transform:translate3d(0, 100%,0);-ms-transform:translate3d(0, 100%,0);transform:translate3d(0, 100%,0);}
+
+
+
+#aside{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+
+
+
+#loading.in{display:block;}
+#loading{
+  display:none;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;overflow:hidden;width:160px;height:20px;border-radius:15px;
+  border:solid 2px #aaa;background:#ccc;color:#000;text-align:center;font-size:14px;line-height:20px;
+}
+
+
+#music{
+  position:absolute;left:0%;bottom:1%;width:90px;height:45px;background:url(../img/music.png) no-repeat -90px 0;background-size:90px 90px;pointer-events:auto;
+  -webkit-transition:background-position 1s;-moz-transition:background-position 1s;-ms-transition:background-position 1s;transition:background-position 1s;
+}
+#music::after{content:' ';position:absolute;top:0;left:0;width:50%;height:100%;background:url(../img/music.png) no-repeat left bottom;background-size:90px 90px;}
+
+#music.on{background-position:0 0;}
+#music.on::after{background-position:right bottom;}
+
+
+
+
+
+
+/*自定义元素*/
+#wrap{-webkit-perspective:1000;}
+.page      {-webkit-transform:rotateX( 90deg) translate3d(0,-100%,0);-webkit-transition:all 1s;}
+.in.page   {-webkit-transform:rotateX(  0deg) translate3d(0,   0%,0);z-index:1;}
+.in ~ .page{-webkit-transform:rotateX(-90deg) translate3d(0, 100%,0);}
+
+
+html,body{background:#2b0836;}
+
+#loading{border-color:#360943;background:#903b9a;color:#fff;}
+
+#page1.onload .main{background:url(../img/page01.jpg) no-repeat center;background-size:100% 100%;}
+#page2.onload .main{background:url(../img/page02.jpg) no-repeat center;background-size:100% 100%;}
+#page3.onload .main{background:url(../img/page03.jpg) no-repeat center;background-size:100% 100%;}
+#page4.onload .main{background:url(../img/page04.jpg) no-repeat center;background-size:100% 100%;}
+#page5.onload .main{background:url(../img/page05.jpg) no-repeat center;background-size:100% 100%;}
+#page6.onload .main{background:url(../img/page06.jpg) no-repeat center;background-size:100% 100%;}
+#page7.onload .main{background:url(../img/page07.jpg) no-repeat center;background-size:100% 100%;}
+#page8.onload .main{background:url(../img/page08.jpg) no-repeat center;background-size:100% 100%;}
+#page9.onload .main{background:url(../img/page09.jpg) no-repeat center;background-size:100% 100%;}
+
+
+#arrow{
+  position:absolute;bottom:1%;left:0;right:0;margin:auto;width:8.4375%;height:5.625%;background:url(../img/arrow.png) no-repeat;background-size:100% 100%;
+  -webkit-animation:arrow 2s infinite;
+}
+@-webkit-keyframes arrow{
+0%,100%{-webkit-transform:translateY(0);}
+50%{-webkit-transform:translateY(-30%);}
+}
+.in +* #arrow{display:none;}
+
+
+.download{position:absolute;top:61.5625%;left:36.25%;width:27.5%;height:11.875%;}
+
+
+
+#page6 .ele{-webkit-transform:translateX(100%);-webkit-transition:all 1.4s;}
+#page6.in .ele{-webkit-transform:translateX(0);}
+
+#page6 .e1{position:absolute;top:0;left: 7.8125%;width:21.9375%;height:100%;background:url(../img/page06_e_02.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:.8s;}
+#page6 .e2{position:absolute;top:0;left:28.90625%;width:21.9375%;height:100%;background:url(../img/page06_e_03.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:1s;}
+#page6 .e3{position:absolute;top:0;left:50%;width:21.9375%;height:100%;background:url(../img/page06_e_04.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:1.2s;}
+#page6 .e4{position:absolute;top:0;left:71.09375%;width:21.9375%;height:100%;background:url(../img/page06_e_05.png) no-repeat;background-size:100% 100%;-webkit-transition-duration:1.4s;}
+
+
+#page8 .e1{position:absolute;bottom:12.3%;left:0;width:100%;height:14.375%;background:url(../img/page08_e1.jpg) no-repeat;background-size:100% 100%;}
+#page8 .e2{position:absolute;bottom:26.666%;right:3.75%;width:25%;height:16.666%;background:url(../img/page08_e2.png) no-repeat;background-size:100% 100%;}
+
+#page8 .e1{opacity:0;-webkit-transform:scale(2,2);-webkit-transition:all .5s 1s ease-in;}
+#page8 .e2{-webkit-transform:translateX(200%) rotate(360deg);-webkit-transition:all 1s 1.5s;}
+
+#page8.in .e1{opacity:1;-webkit-transform:scale(1,1);}
+#page8.in .e2{-webkit-transform:translateX(0) rotate(0);}
+
+
+#popShare{position:absolute;top:0;left:0;width:100%;height:100%;background:url(../img/popShare.png) no-repeat;background-size:100% 100%;opacity:0;pointer-events:none;-webkit-transition:all .5s;}
+#popShare.on{opacity:1;pointer-events:auto;}
+
+
+.sc{position:absolute;top:47%;left:0;width:100%;height:7.5%;}
