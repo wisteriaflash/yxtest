@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>京东精选-索引页</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  body{background-image: none;}
+  .page-index{width: 280px; padding-top: 20px; margin: 0 auto;}
+  .page-index h2{text-align: center; font-size: 24px; margin-bottom: 20px;}
+  .page-index li{margin-bottom: 15px; padding: 0 8px; position: relative;}
+  .page-index li:after{content: '·'; position: absolute; left: -5px; top: -5px; font-size: 18px; color: #CCC;}
+  .page-index li.sub{margin-left: 10px; font-size: 12px; margin-bottom: 10px;}
+  </style>
+</head>
+<body>
+  <div class="page-index">
+    <h2>京东精选--索引页</h2>
+    <ul>
+      <li><a href="home.html">首页</a></li>
+      <li><a href="brand.html">大牌降价</a></li>
+      <li><a href="recommend.html">推荐理由</a></li>
+    </ul>
+  </div>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+var time = '20140818';
+var arr = $('.page-index a');
+var item, url;
+for(var i=0, len=arr.length; i<len; i++){
+  item = $(arr[i]);
+  url = item.attr('href') + '?t=' + time;
+  item.attr('href', url)
+}
+</script>
+</body>
+</html>
