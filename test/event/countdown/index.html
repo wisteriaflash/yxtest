@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <title></title>
+    <style type="text/css">
+    body {
+        margin: 0px;
+        font-size: 12px;
+        position: relative;
+    }
+    .bg {
+        background: url(bg.jpg) no-repeat;
+        background-size: 320px auto;
+        min-height: 500px;
+    }
+    
+    </style>
+	<link rel="stylesheet" type="text/css" href="countdown/countdown.css"/>
+</head>
+
+<body>
+    <div class="bg">
+    	<!-- 半透明背景 -->
+        <div class="countdown_bg"></div>
+        <!-- 样式可以自己定义 J_countdown必须 data-time 表示结束时间 -->
+        <div class="countdown J_countdown" data-time="2014-9-27 0:0:0">
+        距离特卖结束还有：
+        	<div>
+        		<!-- J_day .. 是必须的，代码会变更这些地方的时间 -->
+	        	<span class="J_day">00</span>天
+	        	<span class="J_hour">00</span>时
+	        	<span class="J_min">00</span>分
+	        	<span class='J_sec'>00</span>秒
+        	</div>
+        </div>
+    </div>
+<script type="text/javascript" src="countdown/countdown.js"></script>
+</body>
+</html>

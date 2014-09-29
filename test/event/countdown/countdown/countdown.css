@@ -1,0 +1,33 @@
+/**
+ * 倒计时所需样式
+ * 注：时间块定位为绝对定位，可以指定一个相对DOM
+ * @author zhaogang
+ */
+
+.countdown_bg {
+    background-color: #000;
+    opacity: 0.5;
+    position: absolute;
+    left: 50px;    /*更改背景色块的位置*/
+    top: 50px;
+    width: 190px;    /*更改背景颜色的大小*/
+    height: 60px;
+}
+.countdown {
+    position: absolute;
+    left: 60px;    /*与背景色块的位置保持相对关系*/
+    top: 60px;
+    color: #FFF;
+    font-weight: bold;
+}
+.countdown span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    background-color: #FFF;    /*可以更改时间色块背景颜色*/
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+}
