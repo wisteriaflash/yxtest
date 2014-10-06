@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<title>商城</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- S 主内容 -->
+<div class="wrapper">
+  <!-- S 头部 -->
+  <div class="header">
+    <h1>商城</h1>
+    <a href="#" class="icon-back">返回</a>
+    <a href="#" class="icon-share">分享</a>
+  </div>
+  <!-- E 头部 -->
+  <!-- S 内容 -->
+  <div class="content mall">
+    <img class="pic" src="img/p5.png" alt="" width="100%">
+    <img class="pic-sub" src="img/p5-sub.png" alt="" width="100%">
+  </div>
+  <!-- E 内容 -->
+  <!-- S 底部 -->
+  <div class="footer">
+    <img src="img/bottom.png" alt="" width="100%">
+    <ul class="link-list">
+      <li><a href="diao.html" title="调儿"></a></li>
+      <li><a href="service.html" title="服务"></a></li>
+      <li><a href="guang.html" title="逛"></a></li>
+      <li><a href="#" title="购物车"></a></li>
+      <li class="cur"><a href="mall.html" title="商城"></a></li>
+    </ul>
+  </div>
+  <!-- E 底部 -->
+</div>
+<!-- E 主内容 -->
+
+<!-- 以下脚本仅作为演示使用 -->
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script>
+$(function(){
+  var touchEvent = 'tap';
+  $('.mall .pic').on(touchEvent, function(e){
+    $('.mall .pic-sub').show();
+  });
+});
+</script>
+</body>
+</html>

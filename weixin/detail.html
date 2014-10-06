@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<title>逛</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- S 主内容 -->
+<div class="wrapper guang-detail">
+  <!-- S 头部 -->
+  <div class="header">
+    <h1>调儿</h1>
+    <a href="#" class="icon-back">返回</a>
+    <a href="#" class="icon-share">分享</a>
+  </div>
+  <!-- E 头部 -->
+  <!-- S 内容 -->
+  <div class="content">
+    <div id="J_tabHd" class="tab-hd">
+      <span class="line"></span>
+      <ul>
+        <li><span>主题购</span></li>
+        <li><span>特价秒杀</span></li>
+        <li><span>推荐</span></li>
+      </ul>
+    </div>
+    <div id="J_tabList" class="tab-list">
+      <img class="cur" src="img/pdetail-1.png" alt="" width="100%">
+      <img src="img/pdetail-2.png" alt="" width="100%">
+      <img src="img/pdetail-3.png" alt="" width="100%">  
+    </div>
+  </div>
+  <!-- E 内容 -->
+  <!-- S 底部 -->
+  <div class="footer">
+    <img src="img/bottom-pdetail.png" alt="" width="100%">
+    <ul class="link-list">
+      <li><a href="#" title="关注"></a></li>
+      <li><a href="#" title="加入购物车"></a></li>
+      <li><a href="#" title="分享"></a></li>
+      <li><a href="service.html" title="客服"></a></li>
+    </ul>
+  </div>
+  <!-- E 底部 -->
+</div>
+<!-- E 主内容 -->
+
+<!-- 以下脚本仅作为演示使用 -->
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script>
+$(function(){
+  var touchEvent = 'tap';
+  $('#J_tabHd li').on(touchEvent, function(e){
+    var index = $(this).index();
+    $('#J_tabList img').removeClass('cur');
+    $('#J_tabList img').eq(index).addClass('cur');
+    //line
+    $('#J_tabHd .line').css('left', 110*index);
+  });
+});
+</script>
+</body>
+</html>
