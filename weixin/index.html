@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="format-detection" content="telephone=no" />
-<title>调儿</title>
+<title>购物</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,26 +13,27 @@
 <div class="wrapper">
   <!-- S 头部 -->
   <div class="header">
-    <h1>调儿</h1>
+    <h1>购物</h1>
     <a href="#" class="icon-back">返回</a>
     <a href="#" class="icon-share">分享</a>
   </div>
   <!-- E 头部 -->
   <!-- S 内容 -->
   <div class="content">
-    <img src="img/p1.png" alt="" width="100%">
+    <div id="J_nav" class="nav"><i></i></div>
+    <img src="img/index.png" alt="" width="100%">
   </div>
   <!-- E 内容 -->
-  <!-- S 底部 -->
-  <div class="footer">
-    <img src="img/bottom.png" alt="" width="100%">
-    <ul class="link-list">
-      <li class="cur"><a href="index.html" title="调儿"></a></li>
-      <li><a href="guang.html" title="逛"></a></li>
-      <li><a href="person.html" title="个人中心"></a></li>
+  <!-- S navpop -->
+  <div class="navpop">
+    <ul>
+      <li><a href="guang.html" title="闲逛"></a></li>
+      <li><a href="#search" title="搜索"></a></li>
+      <li><a href="mall.html" title="商城"></a></li>
+      <li><a href="#photo" title="拍照购"></a></li>
     </ul>
   </div>
-  <!-- E 底部 -->
+  <!-- E navpop -->
 </div>
 <!-- E 主内容 -->
 
@@ -41,6 +42,17 @@
 <script>
 $(function(){
   var touchEvent = 'tap';
+  $('#J_nav').on(touchEvent, function(e){
+    e.stopPropagation();
+    $('.navpop').show();
+  });
+  $('.navpop').on(touchEvent, function(e){
+    e.stopPropagation();
+  });
+  $('body').not('#J_nav').on(touchEvent, function(e){
+    var item = $(this);
+    $('.navpop').hide();
+  });
 });
 </script>
 </body>
