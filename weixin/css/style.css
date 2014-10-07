@@ -46,6 +46,7 @@ a:focus,input:focus{
 .footer .link-list li:nth-child(1).cur{background-position: -15px 0;}
 .footer .link-list li:nth-child(2).cur{background-position: -75px 0;}
 .footer .link-list li:nth-child(3).cur{background-position: -135px 0;}
+.footer .link-list li:nth-child(4).cur{background-position: -195px 0;}
 .footer .link-list li:nth-child(5).cur{background-position: -255px 0;}
 
 /*nav*/
@@ -76,6 +77,7 @@ a:focus,input:focus{
 .mall img{position: absolute; top: 0; left: 0;}
 .mall .pic-sub{z-index: 10; display: none;}
 
+.index .content, .service{bottom: 0;}
 
 
 
