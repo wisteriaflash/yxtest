@@ -22,6 +22,7 @@
   <div class="content">
     <div id="J_nav" class="nav"><i></i></div>
     <img src="img/index.png" alt="" width="100%">
+    <a class="banner-link" href="diao.html"></a>
   </div>
   <!-- E 内容 -->
   <!-- S navpop -->
@@ -44,8 +45,18 @@ $(function(){
   var touchEvent = 'tap';
   $('#J_nav').on(touchEvent, function(e){
     e.stopPropagation();
-    $('.navpop').show();
+    setTimeout(function(){
+      $('.navpop').show();
+    },350);
   });
+  // $('.banner-link').on(touchEvent, function(e){
+  //   e.preventDefault();
+  //   var url = $(this).attr('href');
+  //   setTimeout(function(){
+  //     window.location.href = url;
+  //     return;
+  //   }, 350);
+  // });
   $('.navpop').on(touchEvent, function(e){
     e.stopPropagation();
   });
