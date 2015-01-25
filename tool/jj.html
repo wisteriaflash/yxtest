@@ -7,6 +7,7 @@
   *{margin: 0; padding: 0;}
   .wrapper{width: 950px; margin: 0 auto; padding: 10px 0;}
   .wrapper h2{margin-bottom: 20px; text-align: center;}
+  .wrapper .filter{font-size: 12px; padding-left: 40px; margin-bottom: 10px;}
   .wrapper .item{float: left; margin: 0 35px 20px;}
   .wrapper .item textarea{width: 400px; height: 400px;}  
   .wrapper .btn{clear: both; display: block; width: 100px; height: 20px; margin: 0 auto;}
@@ -16,6 +17,13 @@
 
 <div class="wrapper">
   <h2>晋江小说--文字过滤</h2>
+  <div class="filter">
+    <label>是否增加换行：</label>
+    <select id="J_filterWrap">
+      <option value="0">否</option>
+      <option value="1" selected>是</option>
+    </select>
+  </div>
   <div class="item txt">
     <textarea id="J_txt" cols="30" rows="10" autofocus="autofocus"></textarea>
   </div>
@@ -49,10 +57,13 @@ $(function(){
       var me = this;
       var str = $('#J_txt').val();
       var newStr = '';
+      var wrap = $('#J_filterWrap').val();
       //
       if(str.length>0 ){
         newStr = str.replace(/。[a-z0-9].*/g,'');
-        newStr = newStr.replace(/\n/g,'\n\n');
+        if(wrap == 1){
+          newStr = newStr.replace(/\n/g,'\n\n');  
+        }
       }
       //
       $('#J_result').val(newStr);
