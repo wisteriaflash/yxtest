@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test bbb</title>
+</head>
+<body>
+  <a href="#">aaaaa</a>
+  <input type="text" disabled>
+  <input id="J_checka" type="checkbox" value="1" checked>
+  <select>
+    <option value="1">11</option>
+    <option value="2" selected>22</option>
+  </select>
+
+
+  <script src="../lib/jquery-1.9.1.min.js"></script>
+  <script>
+  var data = [{name: 'susan', age: 100}, {name: 'john', age: 20}, {name: 'lucy', age: 5}, {name: 'lily', age: 42}];
+  function sortByProp (name) {
+    return function(obj1, obj2){
+      var val1 = obj1[name];
+      var val2 = obj2[name];
+      if(val1<val2){
+        return -1;
+      }else if(val1>val2){
+        return 1;
+      }else{
+        return 0;
+      }
+    };
+  }
+  data.sort(sortByProp('name'));
+  for(var i=0, len=data.length; i<len; i++){
+    console.log(data[i]);
+  }
+  data.sort(sortByProp('age'));
+  console.log("age",data);
+  </script>
+</body>
+</html>
